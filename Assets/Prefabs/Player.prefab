@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8070681275133984471}
   - component: {fileID: 8070681275133984470}
   - component: {fileID: 8070681275133984476}
+  - component: {fileID: 858532608}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8070681275133984469}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.115340784, y: 0.018620681, z: -0.39707375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -165,6 +166,34 @@ MonoBehaviour:
   attackPoint: {fileID: 8070681276326274160}
   attackRange: 1
   currentattackDamage: 20
+--- !u!114 &858532608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070681275133984469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953b005b0f244c944a625af63f79e6a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8070681275133984469}
+  currentHealth: 8
+  numofHearts: 8
+  maxHealth: 8
+  minHealth: 0
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: 419280344930230518, guid: 18a33bd74df5254499a2cb0ced2371ea, type: 3}
+  emptyHeart: {fileID: 6760636313523333689, guid: 18a33bd74df5254499a2cb0ced2371ea, type: 3}
 --- !u!1 &8070681276326274159
 GameObject:
   m_ObjectHideFlags: 0
