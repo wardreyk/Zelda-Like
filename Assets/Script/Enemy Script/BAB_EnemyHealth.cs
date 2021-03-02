@@ -14,7 +14,7 @@ public class BAB_EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //initialisation de la vie enemis au 
+        //initialisation de la vie enemis au max
         currentHealth = maxHealth;
         enemyHealthBar.SetEnemyMaxHealth(maxHealth);
     }
