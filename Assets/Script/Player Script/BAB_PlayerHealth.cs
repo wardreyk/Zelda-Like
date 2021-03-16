@@ -14,6 +14,7 @@ public class BAB_PlayerHealth : MonoBehaviour
 
     public Image[] hearts;
     public Sprite fullHeart;
+    public Sprite halfHeart;
     public Sprite emptyHeart;
 
     private void Start()
@@ -53,7 +54,7 @@ public class BAB_PlayerHealth : MonoBehaviour
             }
 
             // Ajoute ou supprime des coeurs 
-            if(i < numofHearts)
+            if (i < numofHearts)
             {
                 hearts[i].enabled = true;
             }
