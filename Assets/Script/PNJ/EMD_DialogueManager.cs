@@ -5,7 +5,7 @@ using TMPro;
 
 public class EMD_DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI textDisplay;
+    //public TextMeshProUGUI textDisplay;
 
     public bool IsWriting;
     public bool DialogueIsActive;
@@ -15,7 +15,7 @@ public class EMD_DialogueManager : MonoBehaviour
     public string PNJName;
 
     public GameObject ActualNPC;
-    public GameObject DialogueCanvas;
+    //public GameObject DialogueCanvas;
 
 
     void Start()
@@ -34,9 +34,9 @@ public class EMD_DialogueManager : MonoBehaviour
     {
         if (IsWriting == false)
         {
-            DialogueCanvas.SetActive(false);
+            //DialogueCanvas.SetActive(false);
             index = 0;
-            textDisplay.text = "";
+            //textDisplay.text = "";
             DialogueIsActive = false;
             //PlayerMovesScript.ToggleMenu();
         }
@@ -47,7 +47,7 @@ public class EMD_DialogueManager : MonoBehaviour
 
         foreach (char letter in sentences[index].ToCharArray())
         {
-            textDisplay.text += letter;
+            //textDisplay.text += letter;
             yield return new WaitForSeconds(DelayTime);
         }
 
