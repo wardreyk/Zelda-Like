@@ -55,7 +55,7 @@ public class EMD_DialogueManager : MonoBehaviour
     }
     public IEnumerator StartDialogue()
     {
-        PNJType = ActualNPC.GetComponent<EMD_Sentences>().PNJType;
+        //PNJType = ActualNPC.GetComponent<EMD_Sentences>().PNJType;
         sentences = ActualNPC.GetComponent<EMD_Sentences>().sentences;
         if (PNJName == "PassiveMerchant")
         {
