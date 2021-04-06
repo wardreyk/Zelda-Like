@@ -13,6 +13,7 @@ public class BAB_GoldPickup : MonoBehaviour
         {
             moneyManager.AddMoney(gold);
             Destroy(gameObject);
+            Debug.Log("1 gold pickup");
         }
     }
 }
