@@ -8,6 +8,11 @@ public class BAB_PlayerController : MonoBehaviour
 
     public float moveSpeed = 5f;
 
+    [SerializeField]
+    GameObject Trap;
+    [SerializeField]
+    Transform Player;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -16,6 +21,12 @@ public class BAB_PlayerController : MonoBehaviour
         // Inputs déplacements
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
+
+
+        if (Input.GetButtonDown("Fire4"))
+        {
+            Instantiate(Trap, Player);
+        }
     }
 
     private void FixedUpdate()
@@ -23,4 +34,7 @@ public class BAB_PlayerController : MonoBehaviour
         // Movement du personnage
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+
+ 
 }
