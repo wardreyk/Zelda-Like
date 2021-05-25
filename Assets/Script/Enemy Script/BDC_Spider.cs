@@ -13,6 +13,8 @@ public class BDC_Spider : MonoBehaviour
     [SerializeField]
     FunctionPathFinding functionPathFinding;
 
+  
+
     public enum EnemyStates
     {
         FollowPlayer,
@@ -75,6 +77,9 @@ public class BDC_Spider : MonoBehaviour
     }
     void updateSpiderStates()
     {
+        agent.CalculatePath(functionPathFinding.player.position, functionPathFinding.pathent);
+
+
         if (currentState == EnemyStates.Wandering && functionPathFinding.isPlayerInDetectionRange(functionPathFinding.pathent))
         {
             currentState = EnemyStates.FollowPlayer;

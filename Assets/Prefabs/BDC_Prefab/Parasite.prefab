@@ -12,11 +12,9 @@ GameObject:
   - component: {fileID: 4174060803573774593}
   - component: {fileID: 5327177763543278569}
   - component: {fileID: 5327177763543278566}
-  - component: {fileID: 5327177763543278567}
-  - component: {fileID: 5327177763543278573}
-  - component: {fileID: 4174060804376016433}
   - component: {fileID: 4174060803573774594}
   - component: {fileID: 7943297524611482823}
+  - component: {fileID: -4792398348520576646}
   m_Layer: 8
   m_Name: Parasite
   m_TagString: Player
@@ -32,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5327177763543278564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.62, y: 0.01862068, z: 0}
+  m_LocalPosition: {x: 4.7666035, y: -1.0984952, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5327177764464785729}
@@ -137,69 +135,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5327177763543278567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327177763543278564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0c050554728eb4eaaa6f6804bc4ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5327177763543278569}
-  moveSpeed: 5
---- !u!114 &5327177763543278573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327177763543278564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6c0ea09639fbdd40a23f1c85a60e56f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 512
-  attackPoint: {fileID: 5327177764464785729}
-  attackRange: 1
-  currentattackDamage: 20
---- !u!114 &4174060804376016433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5327177763543278564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953b005b0f244c944a625af63f79e6a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 5327177763543278564}
-  playerController: {fileID: 5327177763543278567}
-  playerCombat: {fileID: 5327177763543278573}
-  currentHealth: 8
-  numofHearts: 8
-  maxHealth: 8
-  minHealth: 0
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  fullHeart: {fileID: 419280344930230518, guid: 18a33bd74df5254499a2cb0ced2371ea, type: 3}
-  halfHeart: {fileID: -4526794253210126664, guid: 9a112352a2c53624ca81aff12e9f73e9, type: 3}
-  emptyHeart: {fileID: 6760636313523333689, guid: 18a33bd74df5254499a2cb0ced2371ea, type: 3}
 --- !u!95 &4174060803573774594
 Animator:
   serializedVersion: 3
@@ -245,6 +180,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &-4792398348520576646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327177763543278564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc06d63dd5d48a84ab628dbeeff61eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5327177763543278569}
+  moveSpeed: 5
+  Trap: {fileID: 0}
+  corruption: {fileID: 0}
 --- !u!1 &5327177764464785758
 GameObject:
   m_ObjectHideFlags: 0
