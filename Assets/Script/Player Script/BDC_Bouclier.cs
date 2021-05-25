@@ -9,7 +9,7 @@ public class BDC_Bouclier : MonoBehaviour
     public float parryRadius = 100f;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown("Shield"))
         {
 
             doParry();

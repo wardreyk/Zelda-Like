@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        if (isTeleportTrigger == true && Input.GetKeyDown("Fire3"))
+        if (isTeleportTrigger == true && Input.GetKeyDown("Interact"))
         {
             player.position = teleportPoint.position;
         }

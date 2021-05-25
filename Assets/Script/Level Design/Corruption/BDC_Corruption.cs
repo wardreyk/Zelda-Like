@@ -6,7 +6,6 @@ using UnityEngine.Tilemaps;
 
 public class BDC_Corruption : MonoBehaviour
 {
-    bool isCorrupted;
 
     public TilemapDestructor tilemapDestructor;
 
@@ -16,10 +15,18 @@ public class BDC_Corruption : MonoBehaviour
     NavMeshSurface2d surface;
 
     public GameObject parasite;
+    public Transform parasitee;
 
     public Transform player;
     public GameObject playere;
 
+    public GameObject corruptedTilemap;
+
+    public GameObject dParasite;
+
+    bool doubleParasiteOn;
+
+    public bool isCorrupted;
 
 
     private void Start()
@@ -29,7 +36,7 @@ public class BDC_Corruption : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Switch"))
         {
             if (isCorrupted == true)
             {
@@ -44,6 +51,22 @@ public class BDC_Corruption : MonoBehaviour
             }
 
         }
+        if (isCorrupted == true)
+        {
+            if (Input.GetButtonDown("UseCapacity"))
+            {
+                if (doubleParasiteOn == false)
+                {
+                    DoubleParasiteOn();
+                }
+                if (doubleParasiteOn == true)
+                {
+                    DoubleParasiteOff();
+
+                }
+            }
+        }
+       
     }
 
 
@@ -51,6 +74,7 @@ public class BDC_Corruption : MonoBehaviour
     {
         corruption.SetActive(true);
         isCorrupted = true;
+       
     }
 
     public void stopCorruption()
@@ -76,4 +100,26 @@ public class BDC_Corruption : MonoBehaviour
         Destroy(parasite);
 
     }
+   
+    public void DoubleParasiteOn()
+    {
+        if (doubleParasiteOn == false)
+        {
+            Instantiate(dParasite, parasitee);
+            doubleParasiteOn = true;
+        }
+    }
+    public void DoubleParasiteOff()
+    {
+        if (doubleParasiteOn == true)
+        {
+            Destroy(dParasite);
+            doubleParasiteOn = false;
+        }
+    }
+
+
+
+
+  
 }
