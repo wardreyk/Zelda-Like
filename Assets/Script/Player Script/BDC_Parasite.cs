@@ -25,7 +25,7 @@ public class BDC_Parasite : MonoBehaviour
 
         if (Input.GetButtonDown("AttackButton") && corruption.isCorrupted == true)
         {
-            Instantiate(Trap, gameObject.transform);
+            Instantiate(Trap, transform.position, transform.rotation);
         }
     }
 

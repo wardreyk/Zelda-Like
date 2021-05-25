@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5327177763543278564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.62, y: 0.01862068, z: 0}
+  m_LocalPosition: {x: 4.7666035, y: -1.0984952, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5327177764464785729}
@@ -195,7 +195,6 @@ MonoBehaviour:
   rb: {fileID: 5327177763543278569}
   moveSpeed: 5
   Trap: {fileID: 0}
-  Player: {fileID: 0}
   corruption: {fileID: 0}
 --- !u!1 &5327177764464785758
 GameObject:

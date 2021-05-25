@@ -9,8 +9,6 @@ public class BAB_PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
 
     [SerializeField]
-    GameObject Trap;
-    [SerializeField]
     Transform Player;
 
     Vector2 movement;
@@ -23,10 +21,6 @@ public class BAB_PlayerController : MonoBehaviour
         movement.y = Input.GetAxis("Vertical");
 
 
-        if (Input.GetButtonDown("Fire4"))
-        {
-            Instantiate(Trap, Player);
-        }
     }
 
     private void FixedUpdate()
