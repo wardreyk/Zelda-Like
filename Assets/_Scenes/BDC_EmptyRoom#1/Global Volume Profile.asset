@@ -1,42 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5797962683949640951
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e1dc532bcb41949b58bc4f2abfbb7e, type: 3}
-  m_Name: LensDistortion
-  m_EditorClassIdentifier: 
-  active: 1
-  m_AdvancedMode: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 1
-    min: -1
-    max: 1
-  xMultiplier:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-    max: 1
-  yMultiplier:
-    m_OverrideState: 1
-    m_Value: 1
-    min: 0
-    max: 1
-  center:
-    m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.5}
-  scale:
-    m_OverrideState: 1
-    m_Value: 5
-    min: 0.01
-    max: 5
 --- !u!114 &-5191438825329906850
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -168,7 +131,6 @@ MonoBehaviour:
   - {fileID: -5191438825329906850}
   - {fileID: -3546135391939266461}
   - {fileID: 8534099891900126542}
-  - {fileID: -5797962683949640951}
   - {fileID: 1984334899206574313}
   - {fileID: -363286411521146297}
   - {fileID: -702453398315080836}

@@ -7,14 +7,20 @@ public class BDC_Bouclier : MonoBehaviour
 
     public GameObject parryCollider;
     public float parryRadius = 100f;
+
+    
+   public BDC_Corruption corruption;
     void Update()
     {
-        if (Input.GetKeyDown("Shield"))
+        if (Input.GetButtonDown("Shield"))
         {
+            if (corruption.isCorrupted == false)
+            {
 
-            doParry();
-            print("La Chancla");
 
+                doParry();
+                print("La Chancla");
+            }
         }
     }
 

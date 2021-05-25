@@ -8,12 +8,12 @@ public class Door : MonoBehaviour
 
      public Transform player;
 
-    public bool isTeleportTrigger;
+     bool isTeleportTrigger;
 
 
     private void Update()
     {
-        if (isTeleportTrigger == true && Input.GetKeyDown("Interact"))
+        if (isTeleportTrigger == true && Input.GetButtonDown("Interact"))
         {
             player.position = teleportPoint.position;
         }
