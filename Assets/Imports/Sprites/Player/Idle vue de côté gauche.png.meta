@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da7ceb1f348875d4cbe425410fe75ef6
+guid: 7156131685af2ca43863ed4e7ecccc8a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3800271061105470858
-    second: "Idle vue de derri\xE8re_0"
+      213: -4877211986830372128
+    second: "Idle vue de c\xF4t\xE9 gauche_0"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "Idle vue de derri\xE8re_0"
+      name: "Idle vue de c\xF4t\xE9 gauche_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d636735664db430800000000000000
-      internalID: 3800271061105470858
+      spriteID: 0e2d2bed989a05cb0800000000000000
+      internalID: -4877211986830372128
       vertices: []
       indices: 
       edges: []
