@@ -5,22 +5,23 @@ using UnityEngine;
 public class BDC_Trap : MonoBehaviour
 {
 
-    private float Timer;
+    private float trapTimer;
     private bool onTrap;
+  
 
-
-    void Update()
+void Update()
     {
         
         if (onTrap == true)
         {
-            Timer += Time.deltaTime;
-
+           trapTimer += Time.deltaTime;
+                
         }
 
-        if (Timer == 1.5f)
+        if (trapTimer == 1.5f)
         {
             print("Wesh");
+            trapTimer = 0;
             onTrap = false;
         }
     }
@@ -34,5 +35,12 @@ public class BDC_Trap : MonoBehaviour
     private void OnCollisionExit2D(Collision2D col)
     {
         onTrap = false;
+    }
+
+    private void DestroyTrap()
+    {
+
+
+
     }
 }
