@@ -32,6 +32,15 @@ public class BAB_PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveY", Input.GetAxis("Vertical"));
             isMoving = true;
         }
+        else
+        {
+            isMoving = false;
+        }
+
+        // Animation Deplacement
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private void FixedUpdate()
