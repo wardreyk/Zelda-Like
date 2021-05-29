@@ -13,13 +13,22 @@ public class BAB_PlayerController : MonoBehaviour
 
     Vector2 movement;
 
-    // Update is called once per frame
+    [SerializeField]
+    BDC_Corruption corruption;
+
+    [SerializeField]
+    BDC_MoovableRock moovableRock;
     void Update()
     {
-        // Inputs déplacements
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
 
+     
+        if (Input.GetButtonDown("UseCapacity") && corruption.isCorrupted  == false) 
+        {
+                moovableRock.MoovableRock();
+                
+        }
 
     }
 

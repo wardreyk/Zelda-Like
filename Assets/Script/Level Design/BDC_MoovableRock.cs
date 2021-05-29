@@ -4,32 +4,37 @@ using UnityEngine;
 public class BDC_MoovableRock : MonoBehaviour
 {
 
-    bool isGrabHorizontal;
-    bool isGrabVertical;
+    public bool upColliderOn;
+    public bool downColliderOn;
+    public bool leftColliderOn;
+    public bool rigtColliderOn;
 
+    public Rigidbody2D rigidBodyMoovableRock;
 
-    public Collider2D[] horizontalCollider;
-    public Collider2D[] verticalCollider;
-
-    void Update()
+    public void MoovableRock()
     {
-        
+        if (leftColliderOn == true || rigtColliderOn == true )
+        {
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.None;
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionY;
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        }
+        else if (upColliderOn == true || downColliderOn == true)
+        {
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.None;
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+            
+
+        }
     }
 
-
-    private void HorizontalMoovement()
+    public void UnMoovableRock()
     {
-
-
-
-
+        rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePosition;
+        print("UnmoovablerockOn");
     }
-    private void VerticalMoovement()
-    {
-
-
-
-
-    }
-
 }
