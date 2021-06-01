@@ -13,6 +13,9 @@ public class BAB_PlayerController : MonoBehaviour
     [SerializeField]
     Transform Player;
 
+    [SerializeField]
+    BDC_Lever Lever;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -31,6 +34,13 @@ public class BAB_PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveX", Input.GetAxis("Horizontal"));
             animator.SetFloat("LastMoveY", Input.GetAxis("Vertical"));
             isMoving = true;
+        }
+
+        if (Input.GetKeyDown("UseCapacity")&& Lever.isLeverOn == true)
+        {
+
+            
+
         }
     }
 
