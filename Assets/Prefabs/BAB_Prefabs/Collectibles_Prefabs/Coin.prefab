@@ -113,4 +113,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 1
-  moneyManager: {fileID: 0}
+  moneyManager: {fileID: 2415330266297035304, guid: 813408fc56a392d4c9db73470b381164, type: 3}
