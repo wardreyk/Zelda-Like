@@ -36,7 +36,7 @@ public class BAB_PlayerController : MonoBehaviour
             isMoving = true;
         }
 
-        if (Input.GetKeyDown("UseCapacity")&& Lever.isLeverOn == true)
+        if (Input.GetButtonDown("UseCapacity")&& Lever.isLeverOn == true)
         {
 
             
