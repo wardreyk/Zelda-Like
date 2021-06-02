@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BAB_PlayerCombat : MonoBehaviour
 {
+    public BAB_PlayerController playerController;
     public LayerMask enemyLayers;
     public Transform attackPoint;
 
@@ -21,6 +22,7 @@ public class BAB_PlayerCombat : MonoBehaviour
         // Vérifie si l'input est appeler
         if (Input.GetButtonDown("AttackButton"))
         {
+            playerController.animator.SetTrigger("SimpleAttack");
             MeleeAttack();
             Debug.Log("Player try to attack");
         }
