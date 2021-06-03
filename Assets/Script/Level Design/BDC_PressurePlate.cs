@@ -8,11 +8,9 @@ public class BDC_PressurePlate : MonoBehaviour
     public bool isLeverOn;
 
     public Tilemap nocolliderObject;
+    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer }
 
-
-    public enum LeverFunctions { NoCollider, DestroyGameObject, }
-
-
+    [SerializeField]
     LeverFunctions leverFunctions;
 
 
@@ -48,6 +46,13 @@ public class BDC_PressurePlate : MonoBehaviour
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
                 nocolliderObject.GetComponent<SpriteRenderer>().enabled = false;
                 break;
+            case LeverFunctions.NoColliderWithTimer:
+      
+                break;
+            case LeverFunctions.DestroyGameObjectWithTimer:
+
+
+                break;
             default:
 
 
@@ -71,6 +76,7 @@ public class BDC_PressurePlate : MonoBehaviour
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = true;
                 nocolliderObject.GetComponent<SpriteRenderer>().enabled = true;
                 break;
+  
             default:
 
 
@@ -78,6 +84,17 @@ public class BDC_PressurePlate : MonoBehaviour
 
 
         }
+
+    }
+    public void DestroyGameObjectTimer()
+    {
+        float Timer;
+        Timer = Time.deltaTime;
+
+        
+        nocolliderObject.GetComponent<TilemapCollider2D>().enabled = true;
+        nocolliderObject.GetComponent<SpriteRenderer>().enabled = true;
+
 
     }
 

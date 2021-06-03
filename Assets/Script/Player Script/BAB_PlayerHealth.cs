@@ -70,6 +70,7 @@ public class BAB_PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        playerController.animator.SetTrigger("Hit");
         currentHealth -= damage;
         if (currentHealth <= minHealth)
         {
@@ -79,6 +80,7 @@ public class BAB_PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        playerController.animator.SetTrigger("Death");
         playerController.enabled = false;
         playerCombat.enabled = false;
         Debug.Log("YOU ARE DEAD");
