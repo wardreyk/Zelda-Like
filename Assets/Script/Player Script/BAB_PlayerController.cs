@@ -13,6 +13,12 @@ public class BAB_PlayerController : MonoBehaviour
     [SerializeField]
     Transform Player;
 
+    [SerializeField]
+    BDC_Lever Lever;
+
+    [SerializeField]
+    BDC_PressurePlate pressurePlate;
+
     Vector2 movement;
 
     // Update is called once per frame
@@ -32,15 +38,6 @@ public class BAB_PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveY", Input.GetAxis("Vertical"));
             isMoving = true;
         }
-        else
-        {
-            isMoving = false;
-        }
-
-        // Animation Deplacement
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     private void FixedUpdate()
