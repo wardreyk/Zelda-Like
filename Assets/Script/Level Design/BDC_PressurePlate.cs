@@ -5,30 +5,60 @@ using UnityEngine.Tilemaps;
 
 public class BDC_PressurePlate : MonoBehaviour
 {
-    public bool isLeverOn;
+    public bool isPressurePlateOn;
+
+    private float Timer;
+
+    public float waitTimeDestroy;
+    public float waitTimeNoCollider;
+
+    public float waitTimeTimer;
 
     public Tilemap nocolliderObject;
-    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer }
+    public Tilemap destroyObject;
+
+    public GameObject GameObjectToActivate;
+    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject }
 
     [SerializeField]
     LeverFunctions leverFunctions;
 
+    private void Update()
+    {
+        if (Timer > waitTimeDestroy)
+        {
+            DestroyGameObjectTimer();
+        }
+        if (Timer > waitTimeNoCollider)
+        {
+            NoColliderObjecTimer();
+        }
+        if (Timer > waitTimeTimer)
+        {
+            Timer = 0;
+        }
 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") & !collision.gameObject.CompareTag("Parasite"))
 
         {
-            PressurePlateOn();
+        
+                PressurePlateOn();
+                isPressurePlateOn = true;
+
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") &! collision.gameObject.CompareTag("Parasite"))
         {
-            isLeverOn = false;
+            PressurePlateOff();
+            isPressurePlateOn = false;
 
         }
     }
@@ -40,18 +70,24 @@ public class BDC_PressurePlate : MonoBehaviour
         {
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
-
+     
                 break;
             case LeverFunctions.DestroyGameObject:
-                nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
-                nocolliderObject.GetComponent<SpriteRenderer>().enabled = false;
+                destroyObject.GetComponent<TilemapCollider2D>().enabled = false;
+                destroyObject.GetComponent<TilemapRenderer>().enabled = false;
+
                 break;
             case LeverFunctions.NoColliderWithTimer:
-      
+                StartTimer();
+  
                 break;
             case LeverFunctions.DestroyGameObjectWithTimer:
+                StartTimer();
+   
+                break;
 
-
+            case LeverFunctions.ActivateGameObject:
+                GameObjectToActivate.SetActive(true);
                 break;
             default:
 
@@ -73,10 +109,16 @@ public class BDC_PressurePlate : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                nocolliderObject.GetComponent<TilemapCollider2D>().enabled = true;
-                nocolliderObject.GetComponent<SpriteRenderer>().enabled = true;
+                destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
+                destroyObject.GetComponent<TilemapRenderer>().enabled = true;
                 break;
-  
+
+            case LeverFunctions.NoColliderWithTimer:
+                Timer = 0;
+            break;
+             case LeverFunctions.DestroyGameObjectWithTimer:
+                Timer = 0;
+                break;
             default:
 
 
@@ -88,15 +130,20 @@ public class BDC_PressurePlate : MonoBehaviour
     }
     public void DestroyGameObjectTimer()
     {
-        float Timer;
-        Timer = Time.deltaTime;
+        destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
+        destroyObject.GetComponent<TilemapRenderer>().enabled = true;
 
-        
+    }
+    public void NoColliderObjecTimer()
+    {
         nocolliderObject.GetComponent<TilemapCollider2D>().enabled = true;
-        nocolliderObject.GetComponent<SpriteRenderer>().enabled = true;
+        
+    }
+
+    public void StartTimer()
+    {
+        Timer += Time.deltaTime;
 
 
     }
-
-
 }
