@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public class BAB_DialogueTrigger : MonoBehaviour
 {
+    public bool IsInRange = false;
+    public bool DialogueOn = false;
+    
     public BAB_Dialogue dialogue;
     public BAB_DialogueManager dialogueManager;
     
     public GameObject InteractButton;
-
-    public bool IsInRange = false;
-    public bool DialogueOn = false;
+    public GameObject dialogueFirstButton;
 
     void Start()
     {
@@ -18,12 +21,17 @@ public class BAB_DialogueTrigger : MonoBehaviour
         DialogueOn = false;
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetButton("Interact") && IsInRange == true)
         {
             TriggerDialogue();
             DialogueOn = true;
+
+            //Clear la selection des boutton UI
+            EventSystem.current.SetSelectedGameObject(null);
+            // Selection d'un nouveau boutton
+            EventSystem.current.SetSelectedGameObject(dialogueFirstButton);
         }
     }
 
