@@ -18,7 +18,10 @@ public class BDC_PressurePlate : MonoBehaviour
     public Tilemap destroyObject;
 
     public GameObject GameObjectToActivate;
-    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject }
+
+    public GameObject GOToActivate;
+    public GameObject GoToDestroy;
+    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy }
 
     [SerializeField]
     LeverFunctions leverFunctions;
@@ -89,6 +92,11 @@ public class BDC_PressurePlate : MonoBehaviour
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(true);
                 break;
+            case LeverFunctions.ActivateAndDestroy:
+                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = false;
+                GoToDestroy.GetComponent<TilemapRenderer>().enabled = false;
+                GOToActivate.SetActive(true);
+                break;
             default:
 
 
@@ -118,6 +126,11 @@ public class BDC_PressurePlate : MonoBehaviour
             break;
              case LeverFunctions.DestroyGameObjectWithTimer:
                 Timer = 0;
+                break;
+            case LeverFunctions.ActivateAndDestroy:
+                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = true;
+                GoToDestroy.GetComponent<TilemapRenderer>().enabled = true;
+                GOToActivate.SetActive(false);
                 break;
             default:
 

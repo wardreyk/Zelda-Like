@@ -93,15 +93,16 @@ public class BDC_Corruption : MonoBehaviour
         {
             corruption.SetActive(false);
             postProcessing8bit.SetActive(true);
-            isCorrupted = false;
+
+        isCorrupted = false;
         }
 
         public void doParasite()
         {
-            playere.GetComponent<BoxCollider2D>().enabled = false;
+         
             playere.GetComponent<BAB_PlayerController>().enabled = false;
             parasite.SetActive(true);
-
+            
 
         }
 

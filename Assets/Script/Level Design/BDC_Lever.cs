@@ -21,11 +21,17 @@ public class BDC_Lever : MonoBehaviour
     public Tilemap nocolliderObject;
     public Tilemap destroyObject;
 
+    public GameObject GOToActivate;
+    public GameObject GoToDestroy;
+
     public GameObject GameObjectToActivate;
-    public enum LeverFunctions {NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject }
+
+
+    public enum LeverFunctions {NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy }
 
     [SerializeField]
     LeverFunctions leverFunctions;
+
 
     private void Update()
     {
@@ -46,11 +52,13 @@ public class BDC_Lever : MonoBehaviour
             if (doEffect == false)
             {
                 LeverON();
+                BDC_ScreenShake.Instance.ShakeCamera(5f, 1f);
             }
             else if (doEffect == true)
             {
                 LeverOFF();
                 doEffect = false;
+                BDC_ScreenShake.Instance.ShakeCamera(5f, 1f);
             }
 
 
@@ -79,7 +87,8 @@ public class BDC_Lever : MonoBehaviour
     public void LeverON()
     {
         switch(leverFunctions)
-        {
+        {         
+            
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
                 doEffect = true;
@@ -102,6 +111,11 @@ public class BDC_Lever : MonoBehaviour
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(true);
                 doEffect = true;
+                break;
+            case LeverFunctions.ActivateAndDestroy:
+                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = false;
+                GoToDestroy.GetComponent<TilemapRenderer>().enabled = false;
+                GOToActivate.SetActive(true);
                 break;
             default:
 
@@ -133,6 +147,11 @@ public class BDC_Lever : MonoBehaviour
                 break;
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(false);
+                break;
+            case LeverFunctions.ActivateAndDestroy:
+                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = true;
+                GoToDestroy.GetComponent<TilemapRenderer>().enabled = true;
+                GOToActivate.SetActive(false);
                 break;
             default:
 
