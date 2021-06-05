@@ -114,7 +114,6 @@ GameObject:
   - component: {fileID: 2225782817047011797}
   - component: {fileID: 2225782817047011796}
   - component: {fileID: 2225782817047011799}
-  - component: {fileID: 2225782817047011798}
   - component: {fileID: 2225782817047011801}
   - component: {fileID: 2225782817047011800}
   m_Layer: 0
@@ -227,21 +226,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.6142423
---- !u!114 &2225782817047011798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2225782817047011803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab7c8d8bb5d17445ab5be23424111b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!114 &2225782817047011801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,19 +238,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9c92812cc9b8e41ba3a8be0cfcbb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: The Rock
-    sentences:
-    - Hey Boy ! my name is dayne johnson and i need your help....
-    - "You can see, this rock in the middle of the road. \nHe block the passage...."
-    - 'i need your help for move the rock of the road.
-
-      do you accept to help
-      me ?'
-  dialogueManager: {fileID: 2225782817047011798}
-  InteractButton: {fileID: 2225782816653576022}
   IsInRange: 0
   DialogueOn: 0
+  dialogue:
+    name: ...
+    sentences:
+    - ......
+    - Hmmmm........
+    - Stop...
+  dialogueManager: {fileID: 0}
+  InteractButton: {fileID: 2225782816653576022}
+  dialogueFirstButton: {fileID: 0}
 --- !u!95 &2225782817047011800
 Animator:
   serializedVersion: 3

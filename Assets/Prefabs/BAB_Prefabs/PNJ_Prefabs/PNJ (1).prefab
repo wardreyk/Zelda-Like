@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6806305561490931225}
   - component: {fileID: 6806305561490931222}
   - component: {fileID: 6806305561490931223}
-  - component: {fileID: 6806305561490931220}
   - component: {fileID: 6806305561490931227}
   - component: {fileID: 6806305561238687805}
   m_Layer: 0
@@ -125,21 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.00000023841858}
   serializedVersion: 2
   m_Radius: 0.6142423
---- !u!114 &6806305561490931220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6806305561490931221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab7c8d8bb5d17445ab5be23424111b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  dialogueText: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!114 &6806305561490931227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9c92812cc9b8e41ba3a8be0cfcbb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsInRange: 0
+  DialogueOn: 0
   dialogue:
     name: The Rock
     sentences:
@@ -161,10 +147,9 @@ MonoBehaviour:
 
       do you accept to help
       me ?'
-  dialogueManager: {fileID: 6806305561490931220}
+  dialogueManager: {fileID: 0}
   InteractButton: {fileID: 6806305562058499181}
-  IsInRange: 0
-  DialogueOn: 0
+  dialogueFirstButton: {fileID: 0}
 --- !u!95 &6806305561238687805
 Animator:
   serializedVersion: 3
