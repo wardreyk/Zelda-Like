@@ -35,13 +35,6 @@ public class BAB_PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveY", Input.GetAxis("Vertical"));
             isMoving = true;
         }
-
-        if (Input.GetButtonDown("UseCapacity")&& Lever.isLeverOn == true)
-        {
-
-            
-
-        }
     }
 
     private void FixedUpdate()
