@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class BAB_PlayerHealth : MonoBehaviour
 {
-    public GameObject player;
-    public BAB_PlayerController playerController;
-    public BAB_PlayerCombat playerCombat;
-
+    public bool canTakeDamage;
+    
     public int currentHealth;
     public int numofHearts;
     public int maxHealth = 8;
     public int minHealth = 0;
-
-    public bool canTakeDamage;
+    
+    public GameObject player;
+    public BAB_PlayerController playerController;
+    public BAB_PlayerCombat playerCombat;
 
     public Image[] hearts;
     public Sprite fullHeart;

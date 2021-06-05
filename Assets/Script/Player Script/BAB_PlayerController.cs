@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BAB_PlayerController : MonoBehaviour
 {
+    public bool isMoving;
+    public float moveSpeed = 5f;
+    
     public Rigidbody2D rb;
     public Animator animator;
 
-    public float moveSpeed = 5f;
-    public bool isMoving;
 
     [SerializeField]
     Transform Player;

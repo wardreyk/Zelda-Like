@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BAB_PlayerCombat : MonoBehaviour
 {
-    public BAB_PlayerController playerController;
+    public bool canAttack;
+    
     public LayerMask enemyLayers;
+    public BAB_PlayerController playerController;
     public Transform attackPoint;
 
     [Range(0.5f, 5f)] public float attackRange = 2f; // Range de l'attaque melee
     [Range(10f, 30f)] public int currentattackDamage = 20; // Dégats de l'attaque melee
-
-    public bool canAttack;
 
     void Start()
     {
