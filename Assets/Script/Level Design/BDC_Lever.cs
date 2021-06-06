@@ -113,8 +113,8 @@ public class BDC_Lever : MonoBehaviour
                 doEffect = true;
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = false;
-                GoToDestroy.GetComponent<TilemapRenderer>().enabled = false;
+                GoToDestroy.GetComponent<BoxCollider2D>().enabled = false;
+                GoToDestroy.GetComponent<SpriteRenderer>().enabled = false;
                 GOToActivate.SetActive(true);
                 break;
             default:
@@ -149,8 +149,8 @@ public class BDC_Lever : MonoBehaviour
                 GameObjectToActivate.SetActive(false);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = true;
-                GoToDestroy.GetComponent<TilemapRenderer>().enabled = true;
+                GoToDestroy.GetComponent<BoxCollider2D>().enabled = true;
+                GoToDestroy.GetComponent<SpriteRenderer>().enabled = true;
                 GOToActivate.SetActive(false);
                 break;
             default:
