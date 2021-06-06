@@ -135,9 +135,11 @@ public class BDC_Corruption : MonoBehaviour
         }
         public void DoubleParasiteOff()
         {
-            if (doubleParasiteOn == true)
+        GameObject dParasiteOnBoard;
+        if (doubleParasiteOn == true)
             {
-                Destroy(dParasite);
+            dParasiteOnBoard = GameObject.Find("dParasite(Clone)");
+            Destroy(dParasiteOnBoard);
                 doubleParasiteOn = false;
             }
         }
