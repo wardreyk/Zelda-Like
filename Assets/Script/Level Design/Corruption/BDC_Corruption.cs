@@ -10,6 +10,7 @@ public class BDC_Corruption : MonoBehaviour
 {
 
     public TilemapDestructor tilemapDestructor;
+    public EMD_InvisibleTilemap tilemapDestructorProps; 
 
    public GameObject corruption;
     public GameObject postProcessing8bit;
@@ -53,6 +54,7 @@ public class BDC_Corruption : MonoBehaviour
                 doCorruption();
                 doParasite();
                 tilemapDestructor.destroyTilemap();
+                tilemapDestructorProps.HideTilemap();
                 print("corruptionactivé");
             }
 
@@ -64,6 +66,7 @@ public class BDC_Corruption : MonoBehaviour
                 stopParasite();
                 DoubleParasiteOff();
                 tilemapDestructor.restoreTilemap();
+                tilemapDestructorProps.ShowTilemap();
                 print("corruptiondésactivé");
             }
 
