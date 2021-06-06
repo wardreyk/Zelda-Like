@@ -17,9 +17,6 @@ public class BAB_PlayerController : MonoBehaviour
     [SerializeField]
     BDC_Lever Lever;
 
-    [SerializeField]
-    BDC_PressurePlate pressurePlate;
-
     Vector2 movement;
 
     // Update is called once per frame
