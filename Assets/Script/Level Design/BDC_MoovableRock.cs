@@ -11,6 +11,14 @@ public class BDC_MoovableRock : MonoBehaviour
 
     public Rigidbody2D rigidBodyMoovableRock;
 
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Interract") && leftColliderOn == true || rigtColliderOn == true || upColliderOn == true || downColliderOn == true)
+        {
+            MoovableRock();
+        }
+    }
     public void MoovableRock()
     {
         if (leftColliderOn == true || rigtColliderOn == true )

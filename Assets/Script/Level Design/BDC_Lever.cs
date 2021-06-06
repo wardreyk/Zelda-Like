@@ -18,7 +18,7 @@ public class BDC_Lever : MonoBehaviour
 
     public float waitTimeTimer;
 
-    public Tilemap nocolliderObject;
+    public GameObject nocolliderObject;
     public GameObject destroyObject;
 
     public GameObject GOToActivate;
@@ -51,14 +51,13 @@ public class BDC_Lever : MonoBehaviour
         {
             if (doEffect == false)
             {
-                LeverON();
-                BDC_ScreenShake.Instance.ShakeCamera(5f, 1f);
+                LeverON();              
             }
             else if (doEffect == true)
             {
                 LeverOFF();
                 doEffect = false;
-                BDC_ScreenShake.Instance.ShakeCamera(5f, 1f);
+
             }
 
 
@@ -116,6 +115,8 @@ public class BDC_Lever : MonoBehaviour
                 GoToDestroy.GetComponent<BoxCollider2D>().enabled = false;
                 GoToDestroy.GetComponent<SpriteRenderer>().enabled = false;
                 GOToActivate.SetActive(true);
+    
+
                 break;
             default:
 
@@ -167,8 +168,6 @@ public class BDC_Lever : MonoBehaviour
     } 
         public void DestroyGameObjectTimer()
     {
-
-
 
         destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
         destroyObject.GetComponent<TilemapRenderer>().enabled = true;
