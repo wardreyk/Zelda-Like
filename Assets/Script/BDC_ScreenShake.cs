@@ -1,16 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class BDC_ScreenShake : MonoBehaviour
 {
-    void Start()
+    public static BDC_ScreenShake Instance { get; private set; } 
+    private CinemachineVirtualCamera cinemachineVirtualCamera;
+    private float shakeTimer;
+    private void Awake()
     {
-       
+        Instance = this;
+        cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
 
-    void Update()
+  public void ShakeCamera(float intensity, float time)
     {
-       
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        shakeTimer = time;
+        print("Ekip");
+    }
+
+    private void Update()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            if (shakeTimer <= 0f)
+            {
+                CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
+
+            }
+        }
     }
 }

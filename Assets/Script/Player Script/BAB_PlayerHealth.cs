@@ -6,14 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class BAB_PlayerHealth : MonoBehaviour
 {
-    public GameObject player;
-    public BAB_PlayerController playerController;
-    public BAB_PlayerCombat playerCombat;
-
+    public bool canTakeDamage;
+    
     public int currentHealth;
     public int numofHearts;
     public int maxHealth = 8;
     public int minHealth = 0;
+    
+    public GameObject player;
+    public BAB_PlayerController playerController;
+    public BAB_PlayerCombat playerCombat;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -24,6 +26,7 @@ public class BAB_PlayerHealth : MonoBehaviour
     {
         // Initialise la vie au max
         currentHealth = maxHealth;
+        canTakeDamage = true;
     }
     private void Update()
     {
@@ -70,11 +73,16 @@ public class BAB_PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        playerController.animator.SetTrigger("Hit");
-        currentHealth -= damage;
-        if (currentHealth <= minHealth)
+        if (canTakeDamage == true)
         {
-            Death();
+            canTakeDamage = false;
+            playerController.animator.SetTrigger("Hit");
+            currentHealth -= damage;
+            StartCoroutine(CooldownBetweenDamage(1f));
+            if (currentHealth <= minHealth)
+            {
+                Death();
+            }
         }
     }
 
@@ -84,7 +92,13 @@ public class BAB_PlayerHealth : MonoBehaviour
         playerController.enabled = false;
         playerCombat.enabled = false;
         Debug.Log("YOU ARE DEAD");
-        StartCoroutine(GameOver(1f));
+        StartCoroutine(GameOver(2.5f));
+    }
+
+    IEnumerator CooldownBetweenDamage(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        canTakeDamage = true;
     }
 
     IEnumerator GameOver(float waitTime)

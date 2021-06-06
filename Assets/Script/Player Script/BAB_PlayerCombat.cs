@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class BAB_PlayerCombat : MonoBehaviour
 {
-    public BAB_PlayerController playerController;
+    public bool canAttack;
+    
     public LayerMask enemyLayers;
+    public BAB_PlayerController playerController;
     public Transform attackPoint;
 
     [Range(0.5f, 5f)] public float attackRange = 2f; // Range de l'attaque melee
     [Range(10f, 30f)] public int currentattackDamage = 20; // Dégats de l'attaque melee
+
+    void Start()
+    {
+        canAttack = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,10 +27,12 @@ public class BAB_PlayerCombat : MonoBehaviour
     void InputAttack()
     {
         // Vérifie si l'input est appeler
-        if (Input.GetButtonDown("AttackButton"))
+        if (Input.GetButtonDown("AttackButton") && canAttack == true)
         {
+            canAttack = false;
             playerController.animator.SetTrigger("SimpleAttack");
             MeleeAttack();
+            StartCoroutine(CooldownBetweenAttack(0.5f));
             Debug.Log("Player try to attack");
         }
     }
@@ -46,6 +55,12 @@ public class BAB_PlayerCombat : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    IEnumerator CooldownBetweenAttack(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        canAttack = true;
     }
 
 
