@@ -19,7 +19,7 @@ public class BDC_Lever : MonoBehaviour
     public float waitTimeTimer;
 
     public Tilemap nocolliderObject;
-    public Tilemap destroyObject;
+    public GameObject destroyObject;
 
     public GameObject GOToActivate;
     public GameObject GoToDestroy;
@@ -67,7 +67,7 @@ public class BDC_Lever : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") &! collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
 
         {
             isLeverOn = true;
@@ -76,7 +76,7 @@ public class BDC_Lever : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") & !collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
         {
             isLeverOn = false;
 
@@ -96,8 +96,8 @@ public class BDC_Lever : MonoBehaviour
 
                 break;          
               case LeverFunctions.DestroyGameObject:
-                   destroyObject.GetComponent<TilemapCollider2D>().enabled = false;
-                destroyObject.GetComponent<TilemapRenderer>().enabled = false;
+                   destroyObject.GetComponent<BoxCollider2D>().enabled = false;
+                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
                 doEffect = true;
                 break;
             case LeverFunctions.NoColliderWithTimer:
@@ -136,8 +136,8 @@ public class BDC_Lever : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
-                destroyObject.GetComponent<TilemapRenderer>().enabled = true;
+                destroyObject.GetComponent<BoxCollider2D>().enabled = true;
+                destroyObject.GetComponent<SpriteRenderer>().enabled = true;
                 break;
             case LeverFunctions.NoColliderWithTimer:
                 StartTimer();
