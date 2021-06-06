@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class BDC_Lever : MonoBehaviour
 {
 
-     bool isLeverOn;
+    bool isLeverOn;
     private float Timer;
 
     public bool doEffect;
@@ -20,6 +20,8 @@ public class BDC_Lever : MonoBehaviour
 
     public Tilemap nocolliderObject;
     public Tilemap destroyObject;
+
+    public Animator animator;
 
     public GameObject GameObjectToActivate;
     public enum LeverFunctions {NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject }
@@ -45,10 +47,12 @@ public class BDC_Lever : MonoBehaviour
         {
             if (doEffect == false)
             {
+                animator.SetBool("LeverOn", true);
                 LeverON();
             }
             else if (doEffect == true)
             {
+                animator.SetBool("LeverOn", false);
                 LeverOFF();
                 doEffect = false;
             }

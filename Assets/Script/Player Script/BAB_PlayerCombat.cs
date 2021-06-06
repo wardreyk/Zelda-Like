@@ -7,6 +7,7 @@ public class BAB_PlayerCombat : MonoBehaviour
     public bool canAttack;
     
     public LayerMask enemyLayers;
+    public LayerMask jarLayers;
     public BAB_PlayerController playerController;
     public Transform attackPoint;
 
@@ -32,6 +33,7 @@ public class BAB_PlayerCombat : MonoBehaviour
             canAttack = false;
             playerController.animator.SetTrigger("SimpleAttack");
             MeleeAttack();
+            AttackJar();
             StartCoroutine(CooldownBetweenAttack(0.5f));
             Debug.Log("Player try to attack");
         }
@@ -46,6 +48,18 @@ public class BAB_PlayerCombat : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<BAB_EnemyHealth>().TakeDamageEnemy(currentattackDamage);
+        }
+    }
+
+    void AttackJar()
+    {
+        // Detecter les ennemis (Range de l'attaque) (détection du collider de l'enemy grace à un cercle posé sur l'attack point) 
+        Collider2D[] hitjar = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, jarLayers);
+
+        // Dégats infliger
+        foreach (Collider2D jar in hitjar)
+        {
+            jar.GetComponent<BAB_DestroyJar>().DestroyJar();
         }
     }
 
