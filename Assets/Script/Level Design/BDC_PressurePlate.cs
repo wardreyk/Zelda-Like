@@ -15,7 +15,7 @@ public class BDC_PressurePlate : MonoBehaviour
     public float waitTimeTimer;
 
     public Tilemap nocolliderObject;
-    public Tilemap destroyObject;
+    public GameObject destroyObject;
 
     public GameObject GameObjectToActivate;
 
@@ -45,7 +45,7 @@ public class BDC_PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") & !collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
 
         {
         
@@ -58,7 +58,7 @@ public class BDC_PressurePlate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") &! collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
         {
             PressurePlateOff();
             isPressurePlateOn = false;
@@ -76,8 +76,8 @@ public class BDC_PressurePlate : MonoBehaviour
      
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<TilemapCollider2D>().enabled = false;
-                destroyObject.GetComponent<TilemapRenderer>().enabled = false;
+                destroyObject.GetComponent<BoxCollider2D>().enabled = false;
+                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
 
                 break;
             case LeverFunctions.NoColliderWithTimer:
@@ -117,8 +117,8 @@ public class BDC_PressurePlate : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
-                destroyObject.GetComponent<TilemapRenderer>().enabled = true;
+                destroyObject.GetComponent<BoxCollider2D>().enabled = true;
+                destroyObject.GetComponent<SpriteRenderer>().enabled = true;
                 break;
 
             case LeverFunctions.NoColliderWithTimer:
