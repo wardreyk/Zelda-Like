@@ -6,16 +6,20 @@ public class Door : MonoBehaviour
 {
     public Transform teleportPoint;
 
-     public Transform player;
+    public Transform player;
 
-     bool isTeleportTrigger;
+    bool isTeleportTrigger;
+
+    public GameObject loadScreed;
 
 
     private void Update()
     {
         if (isTeleportTrigger == true && Input.GetButtonDown("Interact"))
         {
+            loadScreed.SetActive(true);
             player.position = teleportPoint.position;
+            StartCoroutine(DesactiveLoadScreen(1.5f));
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -38,8 +42,11 @@ public class Door : MonoBehaviour
         }
 
     }
-
-
+    IEnumerator DesactiveLoadScreen(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        loadScreed.SetActive(false);
+    }
 
 }
 

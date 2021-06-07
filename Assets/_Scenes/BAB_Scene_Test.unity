@@ -6020,7 +6020,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6991910737546310652, guid: cfacb621483dd62469b77a52b8787fb1, type: 3}
       propertyPath: m_Name
-      value: Coin
+      value: Parchemin
       objectReference: {fileID: 0}
     - target: {fileID: 6991910737546310653, guid: cfacb621483dd62469b77a52b8787fb1, type: 3}
       propertyPath: moneyManager
