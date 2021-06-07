@@ -50,7 +50,7 @@ MonoBehaviour:
     picth: 1
     loop: 0
     source: {fileID: 0}
-  - name: ThemeTown
+  - name: TownZoneTheme
     clip: {fileID: 8300000, guid: 67c81742af61d6845a92f3f0542033e5, type: 3}
     volume: 0.02
     picth: 1
@@ -128,8 +128,50 @@ MonoBehaviour:
     picth: 1
     loop: 0
     source: {fileID: 0}
+  - name: HostileZoneTheme
+    clip: {fileID: 8300000, guid: 56645897724ff3e44ba5600ed424416f, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
   - name: WalkSound
     clip: {fileID: 8300000, guid: 81b334bdf71a53b47903aeed80bfc4ab, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TempleZoneTheme
+    clip: {fileID: 8300000, guid: b38cebe8dfbee3540a6af77c4cd83663, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DonjonZoneTheme
+    clip: {fileID: 8300000, guid: 6c4d273226cee724faa2ed0d5c6a1dff, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossZoneTheme
+    clip: {fileID: 8300000, guid: f4d4552625b8cfc4fbbf582a3d11890d, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CorruptionTheme
+    clip: {fileID: 8300000, guid: afb70abb93371a84a9b3ca1f171d8402, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ShieldSound
+    clip: {fileID: 8300000, guid: 9a767545a0abed543998d819b2d23399, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwitchCorruptionSound
+    clip: {fileID: 8300000, guid: d6d215a0074151a4aa32338c79424624, type: 3}
     volume: 0.02
     picth: 1
     loop: 0

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 public class BDC_MoovableRock : MonoBehaviour
 {
-
     public bool upColliderOn;
     public bool downColliderOn;
     public bool leftColliderOn;
@@ -21,7 +20,7 @@ public class BDC_MoovableRock : MonoBehaviour
     }
     public void MoovableRock()
     {
-        if (leftColliderOn == true || rigtColliderOn == true )
+        if (leftColliderOn == true || rigtColliderOn == true)
         {
             rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.None;
             rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionY;
