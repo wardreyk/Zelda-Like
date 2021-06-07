@@ -88,7 +88,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 25
   m_Sprite: {fileID: -7561559365345188693, guid: 158a5504a39b8984a92fe3f9e8076401, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -112,11 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbb5555ba7a1ea4cac29977eab1cc3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeverOn: 0
+  isPressurePlateOn: 0
   waitTimeDestroy: 0
   waitTimeNoCollider: 0
   waitTimeTimer: 0
   nocolliderObject: {fileID: 0}
   destroyObject: {fileID: 0}
   GameObjectToActivate: {fileID: 0}
+  GOToActivate: {fileID: 0}
+  GoToDestroy: {fileID: 0}
   leverFunctions: 0

@@ -14,11 +14,6 @@ public class BAB_PlayerController : MonoBehaviour
     [SerializeField]
     Transform Player;
 
-    [SerializeField]
-    BDC_Lever Lever;
-
-    [SerializeField]
-    BDC_PressurePlate pressurePlate;
 
     Vector2 movement;
 

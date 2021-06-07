@@ -93,15 +93,16 @@ public class BDC_Corruption : MonoBehaviour
         {
             corruption.SetActive(false);
             postProcessing8bit.SetActive(true);
-            isCorrupted = false;
+
+        isCorrupted = false;
         }
 
         public void doParasite()
         {
-            playere.GetComponent<BoxCollider2D>().enabled = false;
+         
             playere.GetComponent<BAB_PlayerController>().enabled = false;
             parasite.SetActive(true);
-
+            
 
         }
 
@@ -134,9 +135,11 @@ public class BDC_Corruption : MonoBehaviour
         }
         public void DoubleParasiteOff()
         {
-            if (doubleParasiteOn == true)
+        GameObject dParasiteOnBoard;
+        if (doubleParasiteOn == true)
             {
-                Destroy(dParasite);
+            dParasiteOnBoard = GameObject.Find("dParasite(Clone)");
+            Destroy(dParasiteOnBoard);
                 doubleParasiteOn = false;
             }
         }
