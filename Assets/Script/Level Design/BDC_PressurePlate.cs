@@ -45,7 +45,7 @@ public class BDC_PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
 
         {
         
@@ -59,12 +59,17 @@ public class BDC_PressurePlate : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        isPressurePlateOn = true;
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
+        {
+            PressurePlateOn();
+
+            isPressurePlateOn = true;
+        }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
         {
             PressurePlateOff();
             isPressurePlateOn = false;

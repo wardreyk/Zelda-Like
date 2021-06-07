@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ennemy
   - Parasite
+  - Rock
   layers:
   - Default
   - TransparentFX

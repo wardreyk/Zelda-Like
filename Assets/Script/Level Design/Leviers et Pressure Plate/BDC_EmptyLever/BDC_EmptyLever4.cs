@@ -18,7 +18,7 @@ public class BDC_EmptyLever4 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") )
 
         {
             collisionOn = true;
