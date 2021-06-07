@@ -101,8 +101,7 @@ public class BDC_Lever : MonoBehaviour
 
                 break;          
               case LeverFunctions.DestroyGameObject:
-                   destroyObject.GetComponent<BoxCollider2D>().enabled = false;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
+                destroyObject.SetActive(false);
                 doEffect = true;
                 break;
             case LeverFunctions.NoColliderWithTimer:
@@ -118,11 +117,9 @@ public class BDC_Lever : MonoBehaviour
                 doEffect = true;
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<BoxCollider2D>().enabled = false;
-                GoToDestroy.GetComponent<SpriteRenderer>().enabled = false;
+                GoToDestroy.SetActive(false);
                 GOToActivate.SetActive(true);
-    
-
+                doEffect = true;
                 break;
             default:
 
@@ -143,21 +140,18 @@ public class BDC_Lever : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<BoxCollider2D>().enabled = true;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = true;
+                destroyObject.SetActive(true);
                 break;
             case LeverFunctions.NoColliderWithTimer:
-                StartTimer();
                 break;
             case LeverFunctions.DestroyGameObjectWithTimer:
-                StartTimer();
+
                 break;
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(false);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<BoxCollider2D>().enabled = true;
-                GoToDestroy.GetComponent<SpriteRenderer>().enabled = true;
+                GoToDestroy.SetActive(true);
                 GOToActivate.SetActive(false);
                 break;
             default:

@@ -8,7 +8,7 @@ public class BAB_PlatePressed : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Parasite"))
         {
             FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
             animator.SetBool("PlatePress", true);

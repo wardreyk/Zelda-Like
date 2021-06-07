@@ -21,7 +21,7 @@ public class EMD_PressurePlate : MonoBehaviour
 
     public GameObject GOToActivate;
     public GameObject GoToDestroy;
-    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy }
+    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy, Nothing }
 
     [SerializeField]
     LeverFunctions leverFunctions;
@@ -45,12 +45,12 @@ public class EMD_PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Ennemy"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Ennemy"))
 
         {
 
-            PressurePlateOn();
             isPressurePlateOn = true;
+            PressurePlateOn();
 
 
         }
@@ -58,7 +58,7 @@ public class EMD_PressurePlate : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Ennemy"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock") || collision.gameObject.CompareTag("Ennemy"))
         {
             PressurePlateOff();
             isPressurePlateOn = false;
@@ -71,6 +71,10 @@ public class EMD_PressurePlate : MonoBehaviour
     {
         switch (leverFunctions)
         {
+            case LeverFunctions.Nothing:
+                isPressurePlateOn = true;
+                break;
+
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
 
@@ -112,6 +116,10 @@ public class EMD_PressurePlate : MonoBehaviour
     {
         switch (leverFunctions)
         {
+            case LeverFunctions.Nothing:
+                isPressurePlateOn = false;
+                break;
+
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = true;
 
