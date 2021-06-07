@@ -22,6 +22,7 @@ public class BDC_Corruption : MonoBehaviour
 
     public Transform player;
     public GameObject playere;
+    public Rigidbody2D rigidbodyPlayer;
 
     public GameObject corruptedTilemap;
 
@@ -99,8 +100,11 @@ public class BDC_Corruption : MonoBehaviour
 
         public void doParasite()
         {
-         
-            playere.GetComponent<BAB_PlayerController>().enabled = false;
+
+
+        rigidbodyPlayer.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePosition;
+
+        playere.GetComponent<BAB_PlayerController>().enabled = false;
             parasite.SetActive(true);
             
 
@@ -110,9 +114,8 @@ public class BDC_Corruption : MonoBehaviour
 
         public void stopParasite()
         {
-            parasite.SetActive(false);
-            parasitee.position = player.position;
-            playere.GetComponent<BoxCollider2D>().enabled = true;
+         rigidbodyPlayer.constraints = RigidbodyConstraints2D.None;
+            parasite.SetActive(false);          
             playere.GetComponent<BAB_PlayerController>().enabled = true;
         }
 
