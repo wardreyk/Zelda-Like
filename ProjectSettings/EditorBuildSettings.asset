@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/_Scenes/BAB_Scene_Main_Menu.unity
     guid: c49f5cd96d4a88b4382379bec3cbb1dd
   - enabled: 1
-    path: Assets/_Scenes/BAB_Scene_Test.unity
-    guid: dfc2aaf5997ddc64cb8be9c98b006251
+    path: Assets/_Scenes/BDC_SceneFinal.unity
+    guid: a5e048885368a5b4c8fa4da2f6b261e7
   - enabled: 1
     path: Assets/_Scenes/BAB_Scene_Game_Over.unity
     guid: fab4a556a5507674db0e19343cf3a746
