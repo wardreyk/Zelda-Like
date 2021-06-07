@@ -21,7 +21,9 @@ public class BDC_PressurePlate : MonoBehaviour
 
     public GameObject GOToActivate;
     public GameObject GoToDestroy;
-    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy }
+
+    public GameObject DestroyDefinitely;
+    public enum LeverFunctions { NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy, DestroyDefinitely,}
 
     [SerializeField]
     LeverFunctions leverFunctions;
@@ -45,7 +47,7 @@ public class BDC_PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
 
         {
         
@@ -56,9 +58,20 @@ public class BDC_PressurePlate : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
+        {
+            PressurePlateOn();
+
+            isPressurePlateOn = true;
+        }
+
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
         {
             PressurePlateOff();
             isPressurePlateOn = false;
@@ -71,31 +84,30 @@ public class BDC_PressurePlate : MonoBehaviour
     {
         switch (leverFunctions)
         {
+
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
-     
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<BoxCollider2D>().enabled = false;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
-
+                destroyObject.SetActive(false);
                 break;
             case LeverFunctions.NoColliderWithTimer:
                 StartTimer();
-  
                 break;
             case LeverFunctions.DestroyGameObjectWithTimer:
-                StartTimer();
-   
-                break;
-
+                StartTimer(); 
+               break;
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(true);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = false;
-                GoToDestroy.GetComponent<TilemapRenderer>().enabled = false;
+                GoToDestroy.SetActive(false);
                 GOToActivate.SetActive(true);
+                break;
+            case LeverFunctions.DestroyDefinitely:
+                DestroyDefinitely.SetActive(false);
+
+
                 break;
             default:
 
@@ -117,21 +129,21 @@ public class BDC_PressurePlate : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<BoxCollider2D>().enabled = true;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = true;
+                destroyObject.SetActive(true);
                 break;
-
             case LeverFunctions.NoColliderWithTimer:
-                Timer = 0;
-            break;
-             case LeverFunctions.DestroyGameObjectWithTimer:
-                Timer = 0;
+                break;
+            case LeverFunctions.DestroyGameObjectWithTimer:
+                break;
+            case LeverFunctions.ActivateGameObject:
+                GameObjectToActivate.SetActive(false);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<TilemapCollider2D>().enabled = true;
-                GoToDestroy.GetComponent<TilemapRenderer>().enabled = true;
+                GoToDestroy.SetActive(true);
                 GOToActivate.SetActive(false);
                 break;
+            case LeverFunctions.DestroyDefinitely:
+
             default:
 
 
@@ -139,9 +151,8 @@ public class BDC_PressurePlate : MonoBehaviour
 
 
         }
-
     }
-    public void DestroyGameObjectTimer()
+        public void DestroyGameObjectTimer()
     {
         destroyObject.GetComponent<TilemapCollider2D>().enabled = true;
         destroyObject.GetComponent<TilemapRenderer>().enabled = true;

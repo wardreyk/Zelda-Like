@@ -21,8 +21,10 @@ public class PressurePlateManager : MonoBehaviour
 
     public GameObject GameObjectToActivate;
 
+    public GameObject DestroyDefinitely;
 
-    public enum LeverFunctions { NoCollider, DestroyGameObject, ActivateGameObject, ActivateAndDestroy }
+
+    public enum LeverFunctions { NoCollider, DestroyGameObject, ActivateGameObject, ActivateAndDestroy, DestroyDefinitely }
 
     [SerializeField]
     LeverFunctions leverFunctions;
@@ -43,23 +45,20 @@ public class PressurePlateManager : MonoBehaviour
 
             case LeverFunctions.NoCollider:
                 nocolliderObject.GetComponent<TilemapCollider2D>().enabled = false;
-
-
-
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<BoxCollider2D>().enabled = false;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
-
+                destroyObject.SetActive(false);
                 break;
+
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(true);
-
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<BoxCollider2D>().enabled = false;
-                GoToDestroy.GetComponent<SpriteRenderer>().enabled = false;
+                GoToDestroy.SetActive(false);
                 GOToActivate.SetActive(true);
+                break;
+            case LeverFunctions.DestroyDefinitely:
+                DestroyDefinitely.SetActive(false);
 
 
                 break;
