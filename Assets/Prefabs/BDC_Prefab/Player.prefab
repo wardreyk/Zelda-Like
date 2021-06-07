@@ -279,16 +279,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: ceb0c16b1f563bf4aac4c87135f49e9c, type: 3}
+  m_SortingOrder: 100
+  m_Sprite: {fileID: -7872697955863334989, guid: c43841dfda5b0514d9ab179fb0e46942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &3088480004925614682
@@ -325,18 +325,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012691259, y: 0.009518683}
+  m_Offset: {x: 0.000111579895, y: -0.011477947}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 1}
-    newSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8984685, y: 0.87943065}
+  m_Size: {x: 0.75123596, y: 0.9070864}
   m_EdgeRadius: 0
 --- !u!114 &3088480004925614676
 MonoBehaviour:
@@ -350,12 +350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0c050554728eb4eaaa6f6804bc4ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
+  moveSpeed: 5
   rb: {fileID: 3088480004925614682}
   animator: {fileID: 6547299202274357425}
-  moveSpeed: 5
-  isMoving: 0
   Player: {fileID: 3088480004925614681}
-  Lever: {fileID: 0}
 --- !u!114 &3088480004925614686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,9 +367,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c0ea09639fbdd40a23f1c85a60e56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canAttack: 0
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  jarLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  bushLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  playerController: {fileID: 0}
   attackPoint: {fileID: 3088480003968463090}
   attackRange: 1
   currentattackDamage: 20
@@ -386,13 +393,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953b005b0f244c944a625af63f79e6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3088480004925614679}
-  playerController: {fileID: 3088480004925614676}
-  playerCombat: {fileID: 3088480004925614686}
+  canTakeDamage: 0
   currentHealth: 8
   numofHearts: 8
   maxHealth: 8
   minHealth: 0
+  player: {fileID: 3088480004925614679}
+  playerController: {fileID: 3088480004925614676}
+  playerCombat: {fileID: 3088480004925614686}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -437,6 +445,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemapDestructor: {fileID: 0}
+  tilemapDestructorProps: {fileID: 0}
+  TownZone: {fileID: 0}
+  TempleZone: {fileID: 0}
+  HostileZone: {fileID: 0}
+  DonjonZone: {fileID: 0}
+  BossZone: {fileID: 0}
   corruption: {fileID: 0}
   postProcessing8bit: {fileID: 6287239148747259565, guid: 4ef865001bf55af4c9eb379586fc4195, type: 3}
   surface: {fileID: 0}

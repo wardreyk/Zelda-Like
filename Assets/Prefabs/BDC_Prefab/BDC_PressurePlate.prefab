@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4885259268210629002}
   - component: {fileID: 7968930886846210094}
   - component: {fileID: 411975270146230231}
+  - component: {fileID: 4987037583502820168}
   m_Layer: 0
   m_Name: BDC_PressurePlate
   m_TagString: Untagged
@@ -42,7 +43,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438295604499721314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -123,6 +124,7 @@ MonoBehaviour:
   GameObjectToActivate: {fileID: 0}
   GOToActivate: {fileID: 0}
   GoToDestroy: {fileID: 0}
+  DestroyDefinitely: {fileID: 0}
   leverFunctions: 0
 --- !u!114 &7968930886846210094
 MonoBehaviour:
@@ -156,3 +158,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &4987037583502820168
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438295604499721314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011738777, y: -0.017610073}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8826008, y: 0.8708582}
+  m_EdgeRadius: 0

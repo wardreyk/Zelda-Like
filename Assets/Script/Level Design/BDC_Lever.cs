@@ -119,8 +119,7 @@ public class BDC_Lever : MonoBehaviour
             case LeverFunctions.ActivateAndDestroy:
                 GoToDestroy.SetActive(false);
                 GOToActivate.SetActive(true);
-    
-
+                doEffect = true;
                 break;
             default:
 
@@ -152,11 +151,7 @@ public class BDC_Lever : MonoBehaviour
                 GameObjectToActivate.SetActive(false);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.GetComponent<BoxCollider2D>().enabled = true;
-                GoToDestroy.GetComponent<SpriteRenderer>().enabled = true;
-
                 GoToDestroy.SetActive(true);
-
                 GOToActivate.SetActive(false);
                 break;
             default:
