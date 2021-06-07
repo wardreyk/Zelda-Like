@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BAB_DialogueManager : MonoBehaviour
 {
+    public bool DialogueOn = false;
+
     public Text nameText;
     public Text dialogueText;
     
@@ -28,6 +30,7 @@ public class BAB_DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.sentences)
         {
+            FindObjectOfType<BAB_AudioManager>().Play("DialogueSound");
             sentences.Enqueue(sentence);
         }
 
@@ -49,6 +52,7 @@ public class BAB_DialogueManager : MonoBehaviour
 
     IEnumerator TypeSentence (string sentence)
     {
+        FindObjectOfType<BAB_AudioManager>().Play("DialogueSound2");
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
         {
@@ -59,6 +63,8 @@ public class BAB_DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        DialogueOn = false;
+        FindObjectOfType<BAB_AudioManager>().Play("DialogueSound3");
         animator.SetBool("IsOpen", false);
     }
 }

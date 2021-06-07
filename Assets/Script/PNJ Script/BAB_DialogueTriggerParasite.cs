@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class BAB_DialogueTriggerParasite : MonoBehaviour
 {
     public bool IsInRange = false;
-    public bool DialogueOn = false;
     
     public BAB_Dialogue dialogue;
     public BAB_DialogueManager dialogueManager;
@@ -24,7 +23,7 @@ public class BAB_DialogueTriggerParasite : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             IsInRange = true;
-            DialogueOn = true;
+            dialogueManager.DialogueOn = true;
             TriggerDialogue();
 
             //Clear la selection des boutton UI
@@ -37,7 +36,10 @@ public class BAB_DialogueTriggerParasite : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        dialogueManager.EndDialogue();
+        if (dialogueManager.DialogueOn == true)
+        {
+            dialogueManager.EndDialogue();
+        }
         IsInRange = false;
     }
 }

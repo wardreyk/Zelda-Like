@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class BAB_DialogueTrigger : MonoBehaviour
 {
     public bool IsInRange = false;
-    public bool DialogueOn = false;
     
     public BAB_Dialogue dialogue;
     public BAB_DialogueManager dialogueManager;
@@ -18,7 +17,6 @@ public class BAB_DialogueTrigger : MonoBehaviour
     void Start()
     {
         InteractButton.SetActive(false);
-        DialogueOn = false;
     }
 
     void Update()
@@ -26,7 +24,7 @@ public class BAB_DialogueTrigger : MonoBehaviour
         if (Input.GetButton("Interact") && IsInRange == true)
         {
             TriggerDialogue();
-            DialogueOn = true;
+            dialogueManager.DialogueOn = true;
 
             //Clear la selection des boutton UI
             EventSystem.current.SetSelectedGameObject(null);
@@ -52,8 +50,12 @@ public class BAB_DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        dialogueManager.EndDialogue();
+        if (dialogueManager.DialogueOn == true)
+        {
+            dialogueManager.EndDialogue();
+        }
         IsInRange = false;
+        dialogueManager.DialogueOn = false;
         InteractButton.SetActive(false);
     }
 }

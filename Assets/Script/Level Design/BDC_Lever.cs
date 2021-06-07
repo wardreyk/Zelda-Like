@@ -47,11 +47,13 @@ public class BDC_Lever : MonoBehaviour
         {
             if (doEffect == false)
             {
+                FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
                 animator.SetBool("LeverOn", true);
                 LeverON();
             }
             else if (doEffect == true)
             {
+                FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
                 animator.SetBool("LeverOn", false);
                 LeverOFF();
                 doEffect = false;

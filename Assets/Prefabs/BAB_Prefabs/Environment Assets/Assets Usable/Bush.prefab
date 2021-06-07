@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 691227203188843646}
   - component: {fileID: 691227203188843647}
   - component: {fileID: 691227203188843632}
-  m_Layer: 0
-  m_Name: Bush movement
+  m_Layer: 11
+  m_Name: Bush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 691227203188843632}
+  bush: {fileID: 691227203188843633}
 --- !u!95 &691227203188843632
 Animator:
   serializedVersion: 3

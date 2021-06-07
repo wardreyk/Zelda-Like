@@ -76,6 +76,7 @@ public class BAB_PlayerHealth : MonoBehaviour
         if (canTakeDamage == true)
         {
             canTakeDamage = false;
+            FindObjectOfType<BAB_AudioManager>().Play("PlayerHit");
             playerController.animator.SetTrigger("Hit");
             currentHealth -= damage;
             StartCoroutine(CooldownBetweenDamage(1f));
@@ -105,6 +106,7 @@ public class BAB_PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadSceneAsync("BAB_Scene_Game_Over");
+        FindObjectOfType<BAB_AudioManager>().Play("GameOver");
     }
 
 }
