@@ -15,6 +15,10 @@ public class EmptyPressurePlate3 : MonoBehaviour
             isLeverOn3 = true;
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        isLeverOn3 = true;
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
