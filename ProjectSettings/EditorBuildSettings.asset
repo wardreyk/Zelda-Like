@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/BAB_Scene_Game_Over.unity
     guid: fab4a556a5507674db0e19343cf3a746
+  - enabled: 1
+    path: Assets/_Scenes/EMD_LDDonjon.unity
+    guid: 49bde9318b467de489b68c1d7c0784da
+  - enabled: 1
+    path: Assets/_Scenes/BDC_SceneFinal.unity
+    guid: a5e048885368a5b4c8fa4da2f6b261e7
   m_configObjects: {}

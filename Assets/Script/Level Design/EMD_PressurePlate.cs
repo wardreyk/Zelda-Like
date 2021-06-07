@@ -49,8 +49,8 @@ public class EMD_PressurePlate : MonoBehaviour
 
         {
 
-            PressurePlateOn();
             isPressurePlateOn = true;
+            PressurePlateOn();
 
 
         }
