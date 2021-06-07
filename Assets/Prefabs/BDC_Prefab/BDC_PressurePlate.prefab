@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3135205621213302984}
   - component: {fileID: 3999547178880523187}
   - component: {fileID: 4885259268210629002}
+  - component: {fileID: 7968930886846210094}
+  - component: {fileID: 411975270146230231}
   m_Layer: 0
   m_Name: BDC_PressurePlate
   m_TagString: Untagged
@@ -88,8 +90,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 25
-  m_Sprite: {fileID: -7561559365345188693, guid: 158a5504a39b8984a92fe3f9e8076401, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 7912887434825553634, guid: b451336888e7d8244a5e832e27647954, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,3 +124,35 @@ MonoBehaviour:
   GOToActivate: {fileID: 0}
   GoToDestroy: {fileID: 0}
   leverFunctions: 0
+--- !u!114 &7968930886846210094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438295604499721314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7abbd5660dfa7d4f9b61d34831ccc7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 411975270146230231}
+--- !u!95 &411975270146230231
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438295604499721314}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 252a690e85128f34da2b6e635d857b8c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

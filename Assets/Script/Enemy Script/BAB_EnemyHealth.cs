@@ -24,6 +24,7 @@ public class BAB_EnemyHealth : MonoBehaviour
         // vie actuelle - les dégats infliger + knockback de l'ennemis
         currentHealth -= Damage;
         enemyHealthBar.SetHealth(currentHealth);
+        FindObjectOfType<BAB_AudioManager>().Play("EnemyHit");
         animatorEnemy.SetTrigger("Hit");
 
         Debug.Log("Enemy take damage");
@@ -31,6 +32,7 @@ public class BAB_EnemyHealth : MonoBehaviour
         // Mort de l'ennemis
         if (currentHealth <= 0)
         {
+            FindObjectOfType<BAB_AudioManager>().Play("EnemyDie");
             Die();
         }
     }

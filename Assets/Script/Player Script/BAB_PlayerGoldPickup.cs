@@ -11,6 +11,7 @@ public class BAB_PlayerGoldPickup : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            FindObjectOfType<BAB_AudioManager>().Play("PickupCoin");
             moneyManager.AddMoney(gold);
             Destroy(gameObject);
             Debug.Log("1 gold pickup");

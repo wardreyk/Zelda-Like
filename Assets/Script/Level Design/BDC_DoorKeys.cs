@@ -16,8 +16,10 @@ public class BDC_DoorKeys : MonoBehaviour
     }
     private void Houdini()
     {
-
         keys.GetComponent<SpriteRenderer>().enabled = false;
-        keys.GetComponent<BoxCollider2D>().enabled = false;
+        keys.GetComponent<CircleCollider2D>().enabled = false;
+        keys.keyOn = false;
+        DoorKeys.GetComponent<SpriteRenderer>().enabled = false;
+        DoorKeys.GetComponent<BoxCollider2D>().enabled = false;
     }
 }
