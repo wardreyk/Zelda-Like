@@ -8,9 +8,11 @@ using Cinemachine;
 
 public class BDC_Corruption : MonoBehaviour
 {
+    public bool corruptionOn; 
 
     public TilemapDestructor tilemapDestructor;
     public EMD_InvisibleTilemap tilemapDestructorProps;
+    public BAB_PlayerCombat playerCombat;
 
     public GameObject TownZone;
     public GameObject TempleZone;
@@ -56,24 +58,28 @@ public class BDC_Corruption : MonoBehaviour
         {
             if (isCorrupted == false)
             {
+                corruptionOn = true;
+                DesactivateAttackPlayer();
                 TownZone.SetActive(false);
                 TempleZone.SetActive(false);
                 HostileZone.SetActive(false);
                 DonjonZone.SetActive(false);
                 BossZone.SetActive(false);
                 FindObjectOfType<BAB_AudioManager>().Play("SwitchCorruptionSound");
-                StartCoroutine(StartCorruptionTheme(0.7f));
+                StartCoroutine(StartCorruptionTheme(1f));
                 mainCamera.Follow = parasiteTransform;
                 mainCamera.LookAt = parasiteTransform;
                 doCorruption();
                 doParasite();
                 tilemapDestructor.destroyTilemap();
                 tilemapDestructorProps.HideTilemap();
-                print("corruptionactivé");
+                print("corruptionactivï¿½");
             }
 
             else if (isCorrupted == true)
             {
+                corruptionOn = false;
+                ActivateAttackPlayer();
                 TownZone.SetActive(true);
                 TempleZone.SetActive(true);
                 HostileZone.SetActive(true);
@@ -87,7 +93,7 @@ public class BDC_Corruption : MonoBehaviour
                 DoubleParasiteOff();
                 tilemapDestructor.restoreTilemap();
                 tilemapDestructorProps.ShowTilemap();
-                print("corruptiondésactivé");
+                print("corruptiondï¿½sactivï¿½");
             }
 
         }
@@ -96,6 +102,7 @@ public class BDC_Corruption : MonoBehaviour
         {
             if (isCorrupted == true)
             {
+                FindObjectOfType<BAB_AudioManager>().Play("CloneSound");
                 DoubleParasiteOn();
             }
 
@@ -172,9 +179,32 @@ public class BDC_Corruption : MonoBehaviour
             }
         }
 
+    void DesactivateAttackPlayer()
+    {
+        if (corruptionOn == true)
+        {
+            playerCombat.canAttack = false;
+        }
+        else
+        {
+            playerCombat.canAttack = true;
+        }
+    }
+
+    void ActivateAttackPlayer()
+    {
+        if (corruptionOn == false)
+        {
+            playerCombat.canAttack = true;
+        }
+    }
+
     IEnumerator StartCorruptionTheme(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         FindObjectOfType<BAB_AudioManager>().Play("CorruptionTheme");
     }
-}
+
+ }
+
+

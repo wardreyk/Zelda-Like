@@ -176,3 +176,15 @@ MonoBehaviour:
     picth: 1
     loop: 0
     source: {fileID: 0}
+  - name: CloneSound
+    clip: {fileID: 8300000, guid: 04955fe3b1940304aabcb0b219e6a17e, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TrapSound
+    clip: {fileID: 8300000, guid: b7098400fb5b8c145ab2972a4df8ad21, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}

@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 2967524891808311440}
   m_Layer: 8
   m_Name: Parasite
-  m_TagString: Player
+  m_TagString: Parasite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -7435765125360416664, guid: dd4ccecdce6bd13478b1138f5b90b1d6, type: 3}
+  m_Sprite: {fileID: -7366569598602550190, guid: 1fb3867401cdfbb4296e738a04c3c29b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -190,7 +190,7 @@ Animator:
   m_GameObject: {fileID: 6755066077694485006}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21c2033e96952614e9f3e70e8ac316db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6755066077694484995}
+  animator: {fileID: 3296073157525076200}
   moveSpeed: 5
   Trap: {fileID: 2902843590267371547, guid: a4d256cc071d64f4881d42c2c0d51df2, type: 3}
   corruption: {fileID: 1464583836412159481}
@@ -239,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7229384477730846141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: -0, z: 0}
+  m_LocalPosition: {x: -0.001, y: -0, z: 0}
   m_LocalScale: {x: 0.23879, y: 0.23879, z: 0.23879}
   m_Children: []
   m_Father: {fileID: 7229384478652477193}
@@ -277,7 +278,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7229384478652477191}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.65, y: -1.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -326,8 +327,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
-  m_Sprite: {fileID: 3657440701815978256, guid: 158a5504a39b8984a92fe3f9e8076401, type: 3}
+  m_SortingOrder: 25
+  m_Sprite: {fileID: -7872697955863334989, guid: c43841dfda5b0514d9ab179fb0e46942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -372,7 +373,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012691259, y: 0.009518683}
+  m_Offset: {x: -0.015900135, y: 0.03198135}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -383,7 +384,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8984685, y: 0.87943065}
+  m_Size: {x: 0.7508564, y: 0.7061472}
   m_EdgeRadius: 0
 --- !u!114 &7229384478652477188
 MonoBehaviour:
@@ -397,12 +398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de0c050554728eb4eaaa6f6804bc4ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
+  moveSpeed: 5
   rb: {fileID: 7229384478652477194}
   animator: {fileID: 1464583836702848481}
-  moveSpeed: 5
-  isMoving: 0
   Player: {fileID: 7229384478652477193}
-  Lever: {fileID: 0}
 --- !u!114 &7229384478652477198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,10 +415,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c0ea09639fbdd40a23f1c85a60e56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  canAttack: 0
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
+  jarLayers:
+    serializedVersion: 2
+    m_Bits: 1024
+  bushLayers:
+    serializedVersion: 2
+    m_Bits: 2048
+  playerController: {fileID: 7229384478652477188}
+  bdcCorruption: {fileID: 1464583836412159481}
   attackPoint: {fileID: 7229384477730846114}
   attackRange: 1
   currentattackDamage: 20
@@ -434,13 +442,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953b005b0f244c944a625af63f79e6a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 7229384478652477191}
-  playerController: {fileID: 7229384478652477188}
-  playerCombat: {fileID: 7229384478652477198}
+  canTakeDamage: 0
   currentHealth: 8
   numofHearts: 8
   maxHealth: 8
   minHealth: 0
+  player: {fileID: 7229384478652477191}
+  playerController: {fileID: 7229384478652477188}
+  playerCombat: {fileID: 7229384478652477198}
   hearts:
   - {fileID: 0}
   - {fileID: 0}
@@ -484,9 +493,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1526c0f0c0f64604bb7b1458cc580ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corruptionOn: 0
   tilemapDestructor: {fileID: 0}
+  tilemapDestructorProps: {fileID: 0}
+  TownZone: {fileID: 0}
+  TempleZone: {fileID: 0}
+  HostileZone: {fileID: 0}
+  DonjonZone: {fileID: 0}
+  BossZone: {fileID: 0}
   corruption: {fileID: 0}
-  postProcessing8bit: {fileID: 6287239148747259565, guid: 4ef865001bf55af4c9eb379586fc4195, type: 3}
+  postProcessing8bit: {fileID: 0}
   surface: {fileID: 0}
   parasite: {fileID: 6755066077694485006}
   parasitee: {fileID: 6755066077694484992}
