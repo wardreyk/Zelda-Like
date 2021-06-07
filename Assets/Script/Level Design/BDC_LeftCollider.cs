@@ -8,7 +8,7 @@ public class BDC_LeftCollider : MonoBehaviour
     BDC_MoovableRock moovableRock;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
 
         {
             moovableRock.leftColliderOn = true;
@@ -20,7 +20,7 @@ public class BDC_LeftCollider : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
         {
 
             moovableRock.leftColliderOn = false;

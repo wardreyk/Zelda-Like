@@ -13,9 +13,13 @@ public class BDC_MoovableRock : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interact") && leftColliderOn == true || rigtColliderOn == true || upColliderOn == true || downColliderOn == true)
+        if (Input.GetButtonDown("Interact"))
         {
-            MoovableRock();
+            if ((leftColliderOn == true || rigtColliderOn == true || upColliderOn == true || downColliderOn == true))
+            {
+                MoovableRock();
+            }
+
         }
     }
     public void MoovableRock()
@@ -23,16 +27,15 @@ public class BDC_MoovableRock : MonoBehaviour
         if (leftColliderOn == true || rigtColliderOn == true)
         {
             rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.None;
-            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionY;
-            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation; ;
+
 
         }
         else if (upColliderOn == true || downColliderOn == true)
         {
             rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.None;
-            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionX;
-            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
-
+            rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; ;
+   
             
 
         }
@@ -40,8 +43,8 @@ public class BDC_MoovableRock : MonoBehaviour
 
     public void UnMoovableRock()
     {
-        rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezePosition;
+
+        rigidBodyMoovableRock.constraints = RigidbodyConstraints2D.FreezeRotation |RigidbodyConstraints2D.FreezePosition;
         print("UnmoovablerockOn");
     }
 }

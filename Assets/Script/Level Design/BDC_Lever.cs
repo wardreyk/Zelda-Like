@@ -101,8 +101,7 @@ public class BDC_Lever : MonoBehaviour
 
                 break;          
               case LeverFunctions.DestroyGameObject:
-                   destroyObject.GetComponent<BoxCollider2D>().enabled = false;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = false;
+                destroyObject.SetActive(false);
                 doEffect = true;
                 break;
             case LeverFunctions.NoColliderWithTimer:
@@ -141,14 +140,12 @@ public class BDC_Lever : MonoBehaviour
 
                 break;
             case LeverFunctions.DestroyGameObject:
-                destroyObject.GetComponent<BoxCollider2D>().enabled = true;
-                destroyObject.GetComponent<SpriteRenderer>().enabled = true;
+                destroyObject.SetActive(true);
                 break;
             case LeverFunctions.NoColliderWithTimer:
-                StartTimer();
                 break;
             case LeverFunctions.DestroyGameObjectWithTimer:
-                StartTimer();
+
                 break;
             case LeverFunctions.ActivateGameObject:
                 GameObjectToActivate.SetActive(false);
