@@ -46,25 +46,91 @@ MonoBehaviour:
   sounds:
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 5f822c4f86a03734a81e6e856f2973b2, type: 3}
-    volume: 0.1
+    volume: 0.02
     picth: 1
     loop: 0
     source: {fileID: 0}
   - name: ThemeTown
     clip: {fileID: 8300000, guid: 67c81742af61d6845a92f3f0542033e5, type: 3}
-    volume: 0.1
+    volume: 0.02
     picth: 1
     loop: 1
     source: {fileID: 0}
   - name: PickupCoin
     clip: {fileID: 8300000, guid: d48c9e998c6477a4cadc5abeb22370e8, type: 3}
-    volume: 0.1
+    volume: 0.01
     picth: 1
     loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 8876f2d706732fa469fa58c75e32d122, type: 3}
-    volume: 0.1
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackSound
+    clip: {fileID: 8300000, guid: c24190035976a6f44b0f32ccc15d4884, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound
+    clip: {fileID: 8300000, guid: a616976309a7fae4e99015067abca67c, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound2
+    clip: {fileID: 8300000, guid: 772bda47060ce3b419b8c3be8a4761bf, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound3
+    clip: {fileID: 8300000, guid: 6b067a4c3e709484490dc08cc2663f1b, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WalkInBush
+    clip: {fileID: 8300000, guid: 61e2b5a5a03d70a44945d80400c7bf32, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDie
+    clip: {fileID: 8300000, guid: 3cd4bf5bfb0277d40bea52814d80443c, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: 08a811e0ae8897241a73250961e9cc23, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwitchSound
+    clip: {fileID: 8300000, guid: 39975900552141449996f441198fd625, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DestroyJarSound
+    clip: {fileID: 8300000, guid: d076d2f8d86165940998442d3fb5a42e, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DestroyBushSound
+    clip: {fileID: 8300000, guid: b46b01809fb44414e98c5bfd23a92b96, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WalkSound
+    clip: {fileID: 8300000, guid: 81b334bdf71a53b47903aeed80bfc4ab, type: 3}
+    volume: 0.02
     picth: 1
     loop: 0
     source: {fileID: 0}

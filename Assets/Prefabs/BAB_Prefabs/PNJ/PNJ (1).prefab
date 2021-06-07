@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsInRange: 0
-  DialogueOn: 0
   dialogue:
     name: The Rock
     sentences:
