@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6691317511734271772}
   - component: {fileID: 8389811675681708449}
   - component: {fileID: 3108174316208235285}
+  - component: {fileID: 508834673363875814}
   m_Layer: 0
   m_Name: BDC_Lever
   m_TagString: Untagged
@@ -88,8 +89,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1230026735097725053, guid: f1d534aae5f95fa47913deb0eac84d2d, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1470152390063044543, guid: bd4c1218d9babd742bb5bd9d67ea651a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,10 +113,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffdba880e708f440bbdca385f6f7ae6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLeverOn: 0
+  doEffect: 0
   waitTimeDestroy: 0
   waitTimeNoCollider: 0
   waitTimeTimer: 0
   nocolliderObject: {fileID: 0}
   destroyObject: {fileID: 0}
+  GOToActivate: {fileID: 0}
+  GoToDestroy: {fileID: 0}
+  animator: {fileID: 508834673363875814}
   GameObjectToActivate: {fileID: 0}
+  leverFunctions: 0
+--- !u!95 &508834673363875814
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440662651208499942}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3b9a307799a2b84f946b51b7f590f44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

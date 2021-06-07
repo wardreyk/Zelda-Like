@@ -46,25 +46,133 @@ MonoBehaviour:
   sounds:
   - name: PlayerHit
     clip: {fileID: 8300000, guid: 5f822c4f86a03734a81e6e856f2973b2, type: 3}
-    volume: 0.1
+    volume: 0.02
     picth: 1
     loop: 0
     source: {fileID: 0}
-  - name: ThemeTown
+  - name: TownZoneTheme
     clip: {fileID: 8300000, guid: 67c81742af61d6845a92f3f0542033e5, type: 3}
-    volume: 0.1
+    volume: 0.02
     picth: 1
     loop: 1
     source: {fileID: 0}
   - name: PickupCoin
     clip: {fileID: 8300000, guid: d48c9e998c6477a4cadc5abeb22370e8, type: 3}
-    volume: 0.1
+    volume: 0.01
     picth: 1
     loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 8876f2d706732fa469fa58c75e32d122, type: 3}
-    volume: 0.1
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AttackSound
+    clip: {fileID: 8300000, guid: c24190035976a6f44b0f32ccc15d4884, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound
+    clip: {fileID: 8300000, guid: a616976309a7fae4e99015067abca67c, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound2
+    clip: {fileID: 8300000, guid: 772bda47060ce3b419b8c3be8a4761bf, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DialogueSound3
+    clip: {fileID: 8300000, guid: 6b067a4c3e709484490dc08cc2663f1b, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WalkInBush
+    clip: {fileID: 8300000, guid: 61e2b5a5a03d70a44945d80400c7bf32, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDie
+    clip: {fileID: 8300000, guid: 3cd4bf5bfb0277d40bea52814d80443c, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyHit
+    clip: {fileID: 8300000, guid: 08a811e0ae8897241a73250961e9cc23, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwitchSound
+    clip: {fileID: 8300000, guid: 39975900552141449996f441198fd625, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DestroyJarSound
+    clip: {fileID: 8300000, guid: d076d2f8d86165940998442d3fb5a42e, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DestroyBushSound
+    clip: {fileID: 8300000, guid: b46b01809fb44414e98c5bfd23a92b96, type: 3}
+    volume: 0.05
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HostileZoneTheme
+    clip: {fileID: 8300000, guid: 56645897724ff3e44ba5600ed424416f, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: WalkSound
+    clip: {fileID: 8300000, guid: 81b334bdf71a53b47903aeed80bfc4ab, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TempleZoneTheme
+    clip: {fileID: 8300000, guid: b38cebe8dfbee3540a6af77c4cd83663, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DonjonZoneTheme
+    clip: {fileID: 8300000, guid: 6c4d273226cee724faa2ed0d5c6a1dff, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: BossZoneTheme
+    clip: {fileID: 8300000, guid: f4d4552625b8cfc4fbbf582a3d11890d, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: CorruptionTheme
+    clip: {fileID: 8300000, guid: afb70abb93371a84a9b3ca1f171d8402, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ShieldSound
+    clip: {fileID: 8300000, guid: 9a767545a0abed543998d819b2d23399, type: 3}
+    volume: 0.02
+    picth: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SwitchCorruptionSound
+    clip: {fileID: 8300000, guid: d6d215a0074151a4aa32338c79424624, type: 3}
+    volume: 0.02
     picth: 1
     loop: 0
     source: {fileID: 0}
