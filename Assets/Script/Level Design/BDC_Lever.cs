@@ -21,6 +21,9 @@ public class BDC_Lever : MonoBehaviour
     public GameObject nocolliderObject;
     public GameObject destroyObject;
 
+    public GameObject GOToActivate;
+    public GameObject GoToDestroy;
+
     public Animator animator;
 
     public GameObject GameObjectToActivate;
