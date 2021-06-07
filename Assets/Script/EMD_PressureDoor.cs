@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EMD_PressureDoor : MonoBehaviour
 {
-    public BDC_PressurePlate PressurePlate1;
-    public BDC_PressurePlate PressurePlate2;
-    public BDC_PressurePlate PressurePlate3;
+    public EMD_PressurePlate PressurePlate1;
+    public EMD_PressurePlate PressurePlate2;
+    public EMD_PressurePlate PressurePlate3;
 
     void Update()
     {
