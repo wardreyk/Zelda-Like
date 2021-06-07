@@ -7,6 +7,8 @@ public class BAB_PlayerCombat : MonoBehaviour
     public bool canAttack;
     
     public LayerMask enemyLayers;
+    public LayerMask jarLayers;
+    public LayerMask bushLayers;
     public BAB_PlayerController playerController;
     public Transform attackPoint;
 
@@ -30,8 +32,11 @@ public class BAB_PlayerCombat : MonoBehaviour
         if (Input.GetButtonDown("AttackButton") && canAttack == true)
         {
             canAttack = false;
+            FindObjectOfType<BAB_AudioManager>().Play("AttackSound");
             playerController.animator.SetTrigger("SimpleAttack");
             MeleeAttack();
+            AttackJar();
+            AttackBush();
             StartCoroutine(CooldownBetweenAttack(0.5f));
             Debug.Log("Player try to attack");
         }
@@ -49,6 +54,30 @@ public class BAB_PlayerCombat : MonoBehaviour
         }
     }
 
+    void AttackJar()
+    {
+        // Detecter les ennemis (Range de l'attaque) (détection du collider de l'enemy grace à un cercle posé sur l'attack point) 
+        Collider2D[] hitjar = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, jarLayers);
+
+        // Dégats infliger
+        foreach (Collider2D jar in hitjar)
+        {
+            jar.GetComponent<BAB_DestroyJar>().DestroyJar();
+        }
+    }
+
+    void AttackBush()
+    {
+        // Detecter les ennemis (Range de l'attaque) (détection du collider de l'enemy grace à un cercle posé sur l'attack point) 
+        Collider2D[] hitbush = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, bushLayers);
+
+        // Dégats infliger
+        foreach (Collider2D bush in hitbush)
+        {
+            bush.GetComponent<BAB_BushMove>().DestroyBush();
+        }
+    }
+
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -62,6 +91,4 @@ public class BAB_PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         canAttack = true;
     }
-
-
 }

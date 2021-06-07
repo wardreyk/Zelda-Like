@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class BDC_Lever : MonoBehaviour
 {
 
-     bool isLeverOn;
+    bool isLeverOn;
     private float Timer;
 
     public bool doEffect;
@@ -23,6 +23,8 @@ public class BDC_Lever : MonoBehaviour
 
     public GameObject GOToActivate;
     public GameObject GoToDestroy;
+
+    public Animator animator;
 
     public GameObject GameObjectToActivate;
 
@@ -51,10 +53,14 @@ public class BDC_Lever : MonoBehaviour
         {
             if (doEffect == false)
             {
-                LeverON();              
+                FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
+                animator.SetBool("LeverOn", true);
+                LeverON();
             }
             else if (doEffect == true)
             {
+                FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
+                animator.SetBool("LeverOn", false);
                 LeverOFF();
                 doEffect = false;
 
