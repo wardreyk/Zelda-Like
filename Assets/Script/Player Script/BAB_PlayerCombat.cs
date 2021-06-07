@@ -9,10 +9,11 @@ public class BAB_PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public LayerMask jarLayers;
     public LayerMask bushLayers;
+
     public BAB_PlayerController playerController;
     public Transform attackPoint;
 
-    [Range(0.5f, 5f)] public float attackRange = 2f; // Range de l'attaque melee
+    [Range(0f, 5f)] public float attackRange = 2f; // Range de l'attaque melee
     [Range(10f, 30f)] public int currentattackDamage = 20; // Dégats de l'attaque melee
 
     void Start()
