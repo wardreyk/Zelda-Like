@@ -137,7 +137,10 @@ public class BDC_Corruption : MonoBehaviour
         public void stopParasite()
         {
          rigidbodyPlayer.constraints = RigidbodyConstraints2D.None;
-            parasite.SetActive(false);          
+        rigidbodyPlayer.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        parasite.SetActive(false);
+        parasitee.position = player.position;
             playere.GetComponent<BAB_PlayerController>().enabled = true;
         }
 
