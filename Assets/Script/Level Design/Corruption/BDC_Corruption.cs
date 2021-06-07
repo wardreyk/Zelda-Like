@@ -10,9 +10,15 @@ public class BDC_Corruption : MonoBehaviour
 {
 
     public TilemapDestructor tilemapDestructor;
-    public EMD_InvisibleTilemap tilemapDestructorProps; 
+    public EMD_InvisibleTilemap tilemapDestructorProps;
 
-   public GameObject corruption;
+    public GameObject TownZone;
+    public GameObject TempleZone;
+    public GameObject HostileZone;
+    public GameObject DonjonZone;
+    public GameObject BossZone;
+
+    public GameObject corruption;
     public GameObject postProcessing8bit;
 
     [SerializeField]
@@ -49,6 +55,13 @@ public class BDC_Corruption : MonoBehaviour
         {
             if (isCorrupted == false)
             {
+                TownZone.SetActive(false);
+                TempleZone.SetActive(false);
+                HostileZone.SetActive(false);
+                DonjonZone.SetActive(false);
+                BossZone.SetActive(false);
+                FindObjectOfType<BAB_AudioManager>().Play("SwitchCorruptionSound");
+                StartCoroutine(StartCorruptionTheme(0.7f));
                 mainCamera.Follow = parasiteTransform;
                 mainCamera.LookAt = parasiteTransform;
                 doCorruption();
@@ -60,6 +73,12 @@ public class BDC_Corruption : MonoBehaviour
 
             else if (isCorrupted == true)
             {
+                TownZone.SetActive(true);
+                TempleZone.SetActive(true);
+                HostileZone.SetActive(true);
+                DonjonZone.SetActive(true);
+                BossZone.SetActive(true);
+                FindObjectOfType<BAB_AudioManager>().Stop("CorruptionTheme");
                 mainCamera.Follow = playerTransform;
                 mainCamera.LookAt = playerTransform;
                 stopCorruption();
@@ -147,8 +166,9 @@ public class BDC_Corruption : MonoBehaviour
             }
         }
 
-
-
-
-    
+    IEnumerator StartCorruptionTheme(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        FindObjectOfType<BAB_AudioManager>().Play("CorruptionTheme");
+    }
 }

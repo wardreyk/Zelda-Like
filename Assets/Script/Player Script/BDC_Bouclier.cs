@@ -31,6 +31,7 @@ public class BDC_Bouclier : MonoBehaviour
         {
             if (collider.gameObject.CompareTag("EnnemyAttack"))
             {
+                FindObjectOfType<BAB_AudioManager>().Play("ShieldSound");
                 Destroy(collider.gameObject);
                 print("LaChanclaDeux");
             }
