@@ -25,13 +25,13 @@ public class BAB_PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Initialisation du déplacement
+        // Initialisation du déplacement
         isMoving = false;
 
         // Inputs déplacements
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
-        
+
         // Animation Déplacement
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -42,7 +42,6 @@ public class BAB_PlayerController : MonoBehaviour
         {
             animator.SetFloat("LastMoveX", Input.GetAxis("Horizontal"));
             animator.SetFloat("LastMoveY", Input.GetAxis("Vertical"));
-            isMoving = true;
         }
     }
 

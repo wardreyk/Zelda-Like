@@ -32,6 +32,7 @@ public class BAB_BushMove : MonoBehaviour
 
     IEnumerator DesactivateBush(float waitTime)
     {
+        FindObjectOfType<BAB_AudioManager>().Play("DestroyBushSound");
         yield return new WaitForSeconds(waitTime);
         bush.SetActive(false);
     }
