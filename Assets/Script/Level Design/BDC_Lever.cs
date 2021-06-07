@@ -146,7 +146,7 @@ public class BDC_Lever : MonoBehaviour
                 GameObjectToActivate.SetActive(false);
                 break;
             case LeverFunctions.ActivateAndDestroy:
-                GoToDestroy.SetActive(tr);
+                GoToDestroy.SetActive(true);
                 GOToActivate.SetActive(false);
                 break;
             default:
