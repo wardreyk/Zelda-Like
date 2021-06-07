@@ -8,7 +8,7 @@ public class BDC_UpCollider : MonoBehaviour
     BDC_MoovableRock moovableRock;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
         {
             moovableRock.upColliderOn = true;
        
@@ -17,7 +17,7 @@ public class BDC_UpCollider : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite"))
         {
             moovableRock.upColliderOn = false;
             moovableRock.UnMoovableRock();
