@@ -8,6 +8,8 @@ public class BDC_Parasite : MonoBehaviour
 
     public float moveSpeed = 5f;
 
+    private int trapCounter;
+
     [SerializeField]
     GameObject Trap;
 
@@ -23,9 +25,12 @@ public class BDC_Parasite : MonoBehaviour
         movement.y = Input.GetAxis("Vertical");
 
 
-        if (Input.GetButtonDown("AttackButton") && corruption.isCorrupted == true)
+        if (Input.GetButtonDown("AttackButton") && corruption.isCorrupted == true && trapCounter < 5)
         {
-            Instantiate(Trap, transform.position, transform.rotation);
+     
+           Instantiate(Trap, transform.position, transform.rotation);
+               
+                trapCounter++;
         }
     }
 
@@ -33,7 +38,6 @@ public class BDC_Parasite : MonoBehaviour
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-
 
 
 }
