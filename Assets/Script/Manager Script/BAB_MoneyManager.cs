@@ -20,6 +20,6 @@ public class BAB_MoneyManager : MonoBehaviour
     public void AddMoney(int AddGold)
     {
         currentGold += AddGold;
-        moneyText.text = "Gold : " + currentGold;
+        moneyText.text = "Parchemin : " + currentGold;
     }
 }
