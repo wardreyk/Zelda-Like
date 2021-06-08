@@ -9,7 +9,9 @@ public class BAB_EnemyController : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private float range;
+    private float maxRange;
+    [SerializeField]
+    private float minRange;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +23,17 @@ public class BAB_EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FollowPlayer();
+        if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position)>= minRange)
+        {
+            FollowPlayer();
+        }
     }
 
     public void FollowPlayer()
     {
         animator.SetBool("isMoving", true);
+        animator.SetFloat("moveX", (target.position.x - transform.position.x));
+        animator.SetFloat("moveY", (target.position.y - transform.position.y));
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
