@@ -30,12 +30,6 @@ public class BAB_PlayerHealth : MonoBehaviour
     }
     private void Update()
     {
-        // Test damage
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(1);
-            Debug.Log("Player take 1 Damage");
-        }
 
         // Ajustement de la vie
         if (currentHealth >= numofHearts)

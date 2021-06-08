@@ -7,6 +7,7 @@ public class BAB_MoneyManager : MonoBehaviour
 {
     public Text moneyText;
     public int currentGold;
+    public BAB_PlayerHealth playerHealth;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,7 @@ public class BAB_MoneyManager : MonoBehaviour
     public void AddMoney(int AddGold)
     {
         currentGold += AddGold;
+        playerHealth.currentHealth += 8;
         moneyText.text = "Parchemin : " + currentGold;
     }
 }

@@ -6,7 +6,6 @@ public class BAB_EnemyHealth : MonoBehaviour
 {
     public GameObject himself;
     public Animator animatorEnemy;
-    public BAB_EnemyHealthBar enemyHealthBar;
 
     public int maxHealth = 100;
     private int currentHealth;
@@ -16,16 +15,13 @@ public class BAB_EnemyHealth : MonoBehaviour
     {
         //initialisation de la vie enemis au max
         currentHealth = maxHealth;
-        enemyHealthBar.SetEnemyMaxHealth(maxHealth);
     }
 
     public void TakeDamageEnemy(int Damage)
     {
         // vie actuelle - les dégats infliger + knockback de l'ennemis
         currentHealth -= Damage;
-        enemyHealthBar.SetHealth(currentHealth);
         FindObjectOfType<BAB_AudioManager>().Play("EnemyHit");
-        animatorEnemy.SetTrigger("Hit");
 
         Debug.Log("Enemy take damage");
 

@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class EMD_ChangeScene : MonoBehaviour
 {
-    public string ChangingScene;
+    public string changingScene;
     bool isTeleportTrigger;
 
     private void Update()
     {
         if (isTeleportTrigger == true && Input.GetButtonDown("Interact"))
         {
-            SceneManager.LoadScene(ChangingScene);
+            SceneManager.LoadSceneAsync(changingScene);
         }
     }
 

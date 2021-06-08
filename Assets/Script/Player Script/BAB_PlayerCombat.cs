@@ -14,7 +14,7 @@ public class BAB_PlayerCombat : MonoBehaviour
     public Transform attackPoint;
 
     [Range(0f, 5f)] public float attackRange = 2f; // Range de l'attaque melee
-    [Range(10f, 30f)] public int currentattackDamage = 20; // Dégats de l'attaque melee
+    [Range(10f, 50f)] public int currentattackDamage = 35; // Dégats de l'attaque melee
 
     void Start()
     {

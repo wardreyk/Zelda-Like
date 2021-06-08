@@ -6,10 +6,15 @@ public class BAB_EnemyController : MonoBehaviour
 {
     private Animator animator;
     private Transform target;
+    
+    public Transform hompos;
+
     [SerializeField]
     private float speed;
+    
     [SerializeField]
     private float maxRange;
+    
     [SerializeField]
     private float minRange;
 
@@ -27,6 +32,10 @@ public class BAB_EnemyController : MonoBehaviour
         {
             FollowPlayer();
         }
+        else if (Vector3.Distance(target.position, transform.position) >= maxRange)
+        {
+            GoHome();
+        }
     }
 
     public void FollowPlayer()
@@ -37,4 +46,15 @@ public class BAB_EnemyController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
 
+    public void GoHome()
+    {
+        animator.SetFloat("moveX", (hompos.position.x - transform.position.x));
+        animator.SetFloat("moveY", (hompos.position.y - transform.position.y));
+        transform.position = Vector3.MoveTowards(transform.position, hompos.position, speed * Time.deltaTime);
+
+        if (Vector3.Distance(transform.position, hompos.position) == 0)
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
 }
