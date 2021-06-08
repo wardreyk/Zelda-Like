@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
 
     bool isTeleportTrigger;
 
+    public GameObject interactButton;
     public GameObject loadScreed;
 
 
@@ -26,9 +27,9 @@ public class Door : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
+            interactButton.SetActive(true);
             isTeleportTrigger = true;
             Debug.Log(isTeleportTrigger);
-         
             }
 
         }
@@ -37,6 +38,7 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            interactButton.SetActive(false);
             isTeleportTrigger = false;
             Debug.Log(isTeleportTrigger);
         }

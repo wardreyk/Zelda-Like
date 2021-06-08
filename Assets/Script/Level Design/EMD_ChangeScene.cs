@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EMD_ChangeScene : MonoBehaviour
 {
     public string changingScene;
+    public GameObject interactButton;
     bool isTeleportTrigger;
 
     private void Update()
@@ -20,9 +21,9 @@ public class EMD_ChangeScene : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            interactButton.SetActive(true);
             isTeleportTrigger = true;
             Debug.Log(isTeleportTrigger);
-
         }
 
     }
@@ -31,6 +32,7 @@ public class EMD_ChangeScene : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            interactButton.SetActive(false);
             isTeleportTrigger = false;
             Debug.Log(isTeleportTrigger);
         }

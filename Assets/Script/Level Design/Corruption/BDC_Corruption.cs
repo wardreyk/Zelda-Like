@@ -89,6 +89,7 @@ public class BDC_Corruption : MonoBehaviour
             else if (isCorrupted == true)
             {
                 corruptionOn = false;
+                ActivateAttackPlayer();
                 TownZone.SetActive(true);
                 TownZone1.SetActive(true);
                 TempleZone.SetActive(true);

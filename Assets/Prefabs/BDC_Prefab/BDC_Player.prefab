@@ -58,9 +58,9 @@ GameObject:
   - component: {fileID: 6755066077694484992}
   - component: {fileID: 3296073157525076203}
   - component: {fileID: 6755066077694484995}
-  - component: {fileID: 6755066077694485004}
   - component: {fileID: 3296073157525076200}
   - component: {fileID: 2967524891808311440}
+  - component: {fileID: 5282200076668118190}
   m_Layer: 8
   m_Name: Parasite
   m_TagString: Parasite
@@ -121,7 +121,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 100
   m_Sprite: {fileID: -7366569598602550190, guid: 1fb3867401cdfbb4296e738a04c3c29b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,32 +154,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6755066077694485004
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6755066077694485006}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!95 &3296073157525076200
 Animator:
   serializedVersion: 3
@@ -216,6 +190,22 @@ MonoBehaviour:
   moveSpeed: 5
   Trap: {fileID: 2902843590267371547, guid: a4d256cc071d64f4881d42c2c0d51df2, type: 3}
   corruption: {fileID: 1464583836412159481}
+--- !u!58 &5282200076668118190
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755066077694485006}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.18853235}
+  serializedVersion: 2
+  m_Radius: 0.2943282
 --- !u!1 &7229384477730846141
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +317,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 25
+  m_SortingOrder: 100
   m_Sprite: {fileID: -7872697955863334989, guid: c43841dfda5b0514d9ab179fb0e46942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -373,7 +363,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015900135, y: 0.03198135}
+  m_Offset: {x: 0.0017566681, y: 0.00021648407}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -384,7 +374,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7508564, y: 0.7061472}
+  m_Size: {x: 0.49950695, y: 0.5037861}
   m_EdgeRadius: 0
 --- !u!114 &7229384478652477188
 MonoBehaviour:
@@ -426,10 +416,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   playerController: {fileID: 7229384478652477188}
-  bdcCorruption: {fileID: 1464583836412159481}
   attackPoint: {fileID: 7229384477730846114}
-  attackRange: 1
-  currentattackDamage: 20
+  attackRange: 0.7
+  currentattackDamage: 35
 --- !u!114 &1464583836428958418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,9 +485,15 @@ MonoBehaviour:
   corruptionOn: 0
   tilemapDestructor: {fileID: 0}
   tilemapDestructorProps: {fileID: 0}
+  playerCombat: {fileID: 7229384478652477198}
   TownZone: {fileID: 0}
+  TownZone1: {fileID: 0}
   TempleZone: {fileID: 0}
+  TempleZone1: {fileID: 0}
   HostileZone: {fileID: 0}
+  HostileZone1: {fileID: 0}
+  HostileZone2: {fileID: 0}
+  HostileZone3: {fileID: 0}
   DonjonZone: {fileID: 0}
   BossZone: {fileID: 0}
   corruption: {fileID: 0}
@@ -508,6 +503,7 @@ MonoBehaviour:
   parasitee: {fileID: 6755066077694484992}
   player: {fileID: 7229384478652477193}
   playere: {fileID: 7229384478652477191}
+  rigidbodyPlayer: {fileID: 7229384478652477194}
   corruptedTilemap: {fileID: 0}
   dParasite: {fileID: 5623972302775998253, guid: 7cee7136691baf74482e087d018f87f2, type: 3}
   isCorrupted: 0
