@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2225782816653576021
 Transform:
   m_ObjectHideFlags: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2225782816653576022}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4775027, y: 0.7519896, z: -0.17926958}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.4775027, y: 0.588, z: -0.17926958}
+  m_LocalScale: {x: 0.53136945, y: 0.53136945, z: 0.53136945}
   m_Children: []
   m_Father: {fileID: 2225782817047011794}
   m_RootOrder: 0
@@ -71,8 +71,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -8430698015128189240, guid: a4e45fcf0f918984596a55b18be880ca, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -200222385126469370, guid: 15158fdee855453469f426d8796da4de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 441904291425850828, guid: 6c820940d4f0401449db465b781b5525, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -197,7 +197,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2225782817047011803}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -239,13 +239,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsInRange: 0
-  DialogueOn: 0
   dialogue:
-    name: ...
+    name: Timmy
     sentences:
-    - ......
-    - Hmmmm........
-    - Stop...
+    - Ah salut Fabrice !
+    - "Moi et Tim\xE9o, on a appris que t'avais emm\xE9nager dans le coin."
+    - Vu que tu es de retour dans le coin, on va te donner un conseil.
+    - "\xC9vite de trainer \xE0 droite du village."
+    - " Il y a une vieille tour bizarre et plein de monstres \xE9tranges.\r"
+    - "\xC0 mon avis il y a mieux \xE0 faire de sa journ\xE9e que de mourir dans
+      la cave d'une tour en ruine."
+    - "Apr\xE8s, tu fais comme tu veux."
   dialogueManager: {fileID: 0}
   InteractButton: {fileID: 2225782816653576022}
   dialogueFirstButton: {fileID: 0}

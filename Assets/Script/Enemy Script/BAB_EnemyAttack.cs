@@ -12,7 +12,7 @@ public BAB_PlayerHealth playerHealth;
         if (collision.gameObject.CompareTag("Player"))
         {
             playerHealth.TakeDamage(1);
-            Debug.LogError("Take a damage");
+            Debug.Log("Take a damage");
         }
     }
 }

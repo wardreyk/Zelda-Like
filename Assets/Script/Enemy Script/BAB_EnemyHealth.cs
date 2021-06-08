@@ -22,13 +22,13 @@ public class BAB_EnemyHealth : MonoBehaviour
         // vie actuelle - les dégats infliger + knockback de l'ennemis
         currentHealth -= Damage;
         FindObjectOfType<BAB_AudioManager>().Play("EnemyHit");
+        animatorEnemy.SetTrigger("Hit");
 
         Debug.Log("Enemy take damage");
 
         // Mort de l'ennemis
         if (currentHealth <= 0)
         {
-            FindObjectOfType<BAB_AudioManager>().Play("EnemyDie");
             Die();
         }
     }
@@ -36,8 +36,16 @@ public class BAB_EnemyHealth : MonoBehaviour
     void Die()
     {
         // Désactiver l'enemis
+        FindObjectOfType<BAB_AudioManager>().Play("EnemyDie");
+        animatorEnemy.SetTrigger("Death");
+        StartCoroutine(WaitDeath(1f));
+        Debug.Log("Enemy died!");
+    }
+
+    IEnumerator WaitDeath(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
         GetComponent<Collider2D>().enabled = false;
         himself.SetActive(false);
-        Debug.Log("Enemy died!");
     }
 }

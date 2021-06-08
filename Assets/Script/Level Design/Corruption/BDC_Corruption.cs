@@ -15,8 +15,13 @@ public class BDC_Corruption : MonoBehaviour
     public BAB_PlayerCombat playerCombat;
 
     public GameObject TownZone;
+    public GameObject TownZone1;
     public GameObject TempleZone;
+    public GameObject TempleZone1;
     public GameObject HostileZone;
+    public GameObject HostileZone1;
+    public GameObject HostileZone2;
+    public GameObject HostileZone3;
     public GameObject DonjonZone;
     public GameObject BossZone;
 
@@ -61,8 +66,13 @@ public class BDC_Corruption : MonoBehaviour
                 corruptionOn = true;
                 DesactivateAttackPlayer();
                 TownZone.SetActive(false);
+                TownZone1.SetActive(false);
                 TempleZone.SetActive(false);
+                TempleZone1.SetActive(false);
                 HostileZone.SetActive(false);
+                HostileZone1.SetActive(false);
+                HostileZone2.SetActive(false);
+                HostileZone3.SetActive(false);
                 DonjonZone.SetActive(false);
                 BossZone.SetActive(false);
                 FindObjectOfType<BAB_AudioManager>().Play("SwitchCorruptionSound");
@@ -79,10 +89,14 @@ public class BDC_Corruption : MonoBehaviour
             else if (isCorrupted == true)
             {
                 corruptionOn = false;
-                ActivateAttackPlayer();
                 TownZone.SetActive(true);
+                TownZone1.SetActive(true);
                 TempleZone.SetActive(true);
+                TempleZone1.SetActive(true);
                 HostileZone.SetActive(true);
+                HostileZone1.SetActive(true);
+                HostileZone2.SetActive(true);
+                HostileZone3.SetActive(true);
                 DonjonZone.SetActive(true);
                 BossZone.SetActive(true);
                 FindObjectOfType<BAB_AudioManager>().Stop("CorruptionTheme");

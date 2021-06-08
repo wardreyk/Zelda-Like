@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: -7228031299931700396, guid: 28400d4d96b04c646b1015678470a1e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806305561490931221}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -138,14 +138,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsInRange: 0
   dialogue:
-    name: The Rock
+    name: Maman
     sentences:
-    - Hey Boy ! my name is dayne johnson and i need your help....
-    - "You can see, this rock in the middle of the road. \nHe block the passage...."
-    - 'i need your help for move the rock of the road.
-
-      do you accept to help
-      me ?'
+    - "Ah, tu es l\xE0 ? "
+    - "\xC7a, c'est bien pass\xE9e dans le jardin, tu y es rest\xE9 longtemps. Je
+      commen\xE7ais \xE0 m'inqui\xE9ter."
+    - Tu sais, je ne veux plus de drame dans la famille...
+    - Alors ne me refais plus ce genre de frayeur, je t'en prie !
   dialogueManager: {fileID: 0}
   InteractButton: {fileID: 6806305562058499181}
   dialogueFirstButton: {fileID: 0}
@@ -195,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 6806305562058499181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.4775027, y: 0.7519896, z: -0.17926958}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.59001, y: 0.59001, z: 0.59001}
   m_Children: []
   m_Father: {fileID: 6806305561490931224}
   m_RootOrder: 0
@@ -239,8 +238,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -8430698015128189240, guid: a4e45fcf0f918984596a55b18be880ca, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: -200222385126469370, guid: 15158fdee855453469f426d8796da4de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
