@@ -28,8 +28,10 @@ public class BDC_Lever : MonoBehaviour
 
     public GameObject GameObjectToActivate;
 
+    public GameObject DestroyDefinitely;
 
-    public enum LeverFunctions {NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy }
+
+    public enum LeverFunctions {NoCollider, DestroyGameObject, NoColliderWithTimer, DestroyGameObjectWithTimer, ActivateGameObject, ActivateAndDestroy, DestroyDefinitely }
 
     [SerializeField]
     LeverFunctions leverFunctions;
@@ -121,6 +123,9 @@ public class BDC_Lever : MonoBehaviour
                 GOToActivate.SetActive(true);
                 doEffect = true;
                 break;
+            case LeverFunctions.DestroyDefinitely:
+                DestroyDefinitely.SetActive(false);
+                break;
             default:
 
 
@@ -154,6 +159,7 @@ public class BDC_Lever : MonoBehaviour
                 GoToDestroy.SetActive(true);
                 GOToActivate.SetActive(false);
                 break;
+            case LeverFunctions.DestroyDefinitely:
             default:
 
 
