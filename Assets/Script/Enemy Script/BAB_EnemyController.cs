@@ -5,7 +5,7 @@ using UnityEngine;
 public class BAB_EnemyController : MonoBehaviour
 {
     private Animator animator;
-    private Transform targer;
+    private Transform target;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -14,12 +14,20 @@ public class BAB_EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        target = FindObjectOfType<BAB_PlayerController>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        FollowPlayer();
     }
+
+    public void FollowPlayer()
+    {
+        animator.SetBool("isMoving", true);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+    }
+
 }
