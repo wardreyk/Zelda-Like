@@ -5,7 +5,7 @@ using UnityEngine;
 public class EmptyPressurePlate3 : MonoBehaviour
 {
     public bool isLeverOn3;
-
+    public Animator animator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +13,8 @@ public class EmptyPressurePlate3 : MonoBehaviour
 
         {
             isLeverOn3 = true;
+            FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
+            animator.SetBool("PlatePress", true);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -25,7 +27,8 @@ public class EmptyPressurePlate3 : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Parasite") || collision.gameObject.CompareTag("Rock"))
         {
             isLeverOn3 = false;
-
+            FindObjectOfType<BAB_AudioManager>().Play("SwitchSound");
+            animator.SetBool("PlatePress", false);
         }
     }
 }

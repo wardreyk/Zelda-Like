@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -5186421899258114775}
   - component: {fileID: 9055495443100439651}
   - component: {fileID: 3208134495225758393}
-  - component: {fileID: 4413633225301912956}
   - component: {fileID: 3790521320337577911}
   m_Layer: 0
   m_Name: EmptyPressurePlate#1
@@ -125,18 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeverOn1: 0
---- !u!114 &4413633225301912956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108169596901936121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7abbd5660dfa7d4f9b61d34831ccc7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   animator: {fileID: 3790521320337577911}
 --- !u!95 &3790521320337577911
 Animator:
